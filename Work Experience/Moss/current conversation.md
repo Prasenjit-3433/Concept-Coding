@@ -214,3 +214,18 @@ you to me:
 you to me:
     it's ready and saved with filename - API Design.md in folder - in Module 7: API Design.
     ready for Step 7: Caching Strategy
+
+-----------------------------------------------------------------
+you to me:
+    it's ready and saved with filename - Caching Strategy.md in folder - in Module 8: Caching Strategy.
+    ready for Step 8: Transaction Handling
+
+-----------------------------------------------------------------
+you to me:
+    it's ready and saved with filename - Transaction Handling.md in folder - in Module 9: Transaction Handling.
+    ready for Step 9: DevOps & Deployment
+
+-----------------------------------------------------------------
+you to me:
+    it's ready and saved with filename - DevOps & Deployment.md in folder - in Module 10: DevOps & Deployment.
+    ready for Step 10: Monitoring, Tracing & Logging
