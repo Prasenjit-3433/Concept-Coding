@@ -188,3 +188,29 @@ you to me:
         it's ready and saved with filename - Team Structure & Ownership.md in folder - in Module 4: Team Structure & Ownership
         ready for Step 4: Database Selection & Schema Design 
 ----------------------------------------------------------
+you to me:
+    it's ready and saved with filename - Database Selection & Schema Design.md in folder - in Module 5: Database Selection & Schema Design.
+    ready for Step 5: Kafka Architecture & Usage
+
+------------------------------------------------------------
+me to you:
+    I want to make sure, you're NOT using outbox pattern because I mentioned it.
+    if the system needs it only use it or if the system anything else, you must it like saga, cqrs, strangler or whatever I'm not aware of....
+    right?
+
+-------------------------------------------------------------
+you to me:
+    Absolutely right. Good catch — and this is exactly the kind of thinking that impresses interviewers.
+    Let me re-evaluate honestly. 
+    it's ready and saved with filename - Does Our System Actually Need the Outbox Pattern?.md in folder - in Module 5: Database Selection & Schema Design.
+    ready for Step 5: Kafka Architecture & Usage
+
+-------------------------------------------------------------
+you to me:
+    it's ready and saved with filename - Kafka Architecture & Usage.md in folder - in Module 6; Kafka Architecture & Usage.
+    ready for Step 6: API Design 
+
+----------------------------------------------------------------
+you to me:
+    it's ready and saved with filename - API Design.md in folder - in Module 7: API Design.
+    ready for Step 7: Caching Strategy
