@@ -190,3 +190,114 @@ Me to you:
 You to me:
     it's ready and saved with filename - Tech Stack & System Architecture.md in folder - in Module 2: Tech Stack & System Architecture.
     ready for Step 3: System Design & Data Flow
+
+    Noted and locked. The document above stands exactly as written — REST over HTTP for internal service communication was already the decision I made and documented.
+    
+    **Moving to Step 3: System Design & Data Flows.**
+    
+    Before I write anything, I need to make one scoping decision clearly with you:
+    
+    System Design & Data Flows could mean two things:
+    
+    **Option A — Broad sweep.** Cover the major end-to-end flows across the whole system — how a user logs in, how bank transactions get synced, how an investment order flows from the mobile app all the way through to portfolio update, how a budget alert fires and becomes a push notification. High-level, cross-service flows. No deep dive into any single service yet.
+    
+    **Option B — Just the critical flows.** Pick the 4-5 most architecturally significant flows — the ones that touch multiple services, involve async messaging, background jobs, or third-party integrations — and go deep on those. Skip the simple ones like "user updates their profile."
+    
+    Given that Step 4 onwards goes deep into individual services and components, **Option A is the right call here** — broad, cross-service data flows that show how the whole system breathes together, before we zoom in.
+    
+    One question before I start:User's selection: Numbered step-by-step flows with ASCII diagrams (like Step 2)
+    
+    Perfect. Writing Step 3 now.
+
+-----------------------------------------------------------------------------------
+You to me:
+    it's ready and saved with filename - System Design & Data Flow.md in folder - in Module 3: System Design & Data Flow.
+    ready for Step 4: Team Structure & Ownership
+
+----------------------------------------------------------------------------------
+You to me:
+    it's ready and saved with filename - Team Structure & Ownership.md in folder - in Module 4: Team Structure & Ownership
+    ready for Step 5: Database Selection & Schema Design
+
+-------------------------------------------------------------------------
+Me to you:
+    one more thing worth mentioning
+
+    Along with Database Selection & Schema Design, we should also consider few other important stuff as well
+    Like:
+    - Indexes, how do I debug performance bottlenecks, etc.?
+    - how migrations done
+    - how database server is set up like in microservice achitecture, there is thing like "database per service" pattern. 
+      so here what is happening here own database per service, or per module. If I'm not wrong core product's a 
+      modular monolith, so in future how databse will scale as usebase scales. in that case, how this modular monolith scale with database - these design decisions, I need to learn as I don't have much knowledge around this.
+     
+    any other stuff related to discuss here like consistency pattern, microservice design pattern if any being used and 
+    if I forget anything to mention....
+    one more thing, since the app has both free & pro plan users, therefore at some point, we must have rate limiter....I 
+    don't know whether it make sence to talk about it here or later.
+    
+    These are very important for both - own learning purpose as well as from interview prospective because this teaches me
+    system design thinking.
+
+----------------------------------------------------------------------------
+You to me:
+    Great additions. All of these are legitimate, important topics — and you're right that they belong here or nearby.
+    
+    Let me organise everything cleanly before writing a single word:
+    
+    **Rate limiting** — I'll cover it in the API Design step, not here. Rate limiting is an API gateway and application-layer concern, not a database concern. It belongs with API design where we talk about free vs premium tier enforcement, per-endpoint limits, and how Redis sliding window counters work. Mentioning it here would muddy the focus.
+    
+    Everything else you listed belongs right here in Step 5. So the full scope of this step is:
+    
+    1. **Database selection** — PostgreSQL vs MongoDB, deep reasoning
+    2. **Database architecture** — database-per-service pattern, what FinVerse actually does, how Core Product's single database is structured internally per module
+    3. **Schema design** — Prisma models for all modules (deep on yours, working knowledge on others)
+    4. **Migrations** — how Prisma migrations work, how the team handles them safely in production
+    5. **Indexes** — what gets indexed, why, how you think about index design for financial data
+    6. **Performance debugging** — how you identify and fix slow queries, tools used
+    7. **Scaling the modular monolith's database** — what happens as userbase grows, how you evolve from one shared database toward service extraction if needed
+    8. **Consistency patterns & microservice design patterns** — where eventual consistency is acceptable, where it is not, and whether Outbox pattern or SAGA applies to FinVerse
+    
+    One question before I start:User's selection: Go as deep as possible on everything — I want to genuinely learn all of this
+    
+    Good. This step will be long — but every section will be written so that you genuinely understand it, not just have it documented. Let's go.
+
+
+------------------------------------------------------------------------
+You to me:
+    it's ready and saved with filename - Database Selection & Schema Design.md in folder - in Module 5: Database Selection & Schema Design
+    ready for Step 6: RabbitMQ & BullMQ
+
+-------------------------------------------------------------------------   
+Me to you:
+    Hold a second!
+    RabbitMQ & BullMQ, they're itself is big big topic
+    devide them into different steps like
+    Step 6: RabbitMQ
+    Step 7: BullMQ
+    
+    as I told you earlier, I barely know RabbitMQ
+    and know NOTHING about BullMQ
+    so you've to explain things to me in the easiest way possible
+    
+    In case of RabbitMQ, so many questions comes...so many in interview regarding resiliency, failure, fault tolerence etc. so many follow up questions
+    like
+    
+    * what it's needed & it's advantage
+    * what if queue size limit reached
+    * what happens to messeges when queue is down
+    * what happens when consumer is down
+    * what happens when consumer not able to process a message
+    * how retry works & differen ways of retry
+    * how distributed messing queue work
+    * what is dead letter queue & it's usecase
+    so on...
+    and it's architecture, set up, usecase, best practices in our team....(as mentioned way earlier)
+    
+    similar for BullMQ, I'm gonna tell you so many things!
+    right now focus on RabbitMQ!
+
+------------------------------------------------------------------------
+You to me:
+    it's ready and saved with filename - RabbitMQ.md in folder - in Module 6: RabbitMQ
+    ready for Step 7: BullMQ
