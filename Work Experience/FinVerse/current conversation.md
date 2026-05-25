@@ -483,5 +483,39 @@ Me to you:
     And finally, I want real use cases from our team explained using the STAR format, so that the explanation becomes interview-ready.
     
     Basically, I want the entire BullMQ section to be rewritten from scratch in a much more professional, structured, educational, and interview-focused way.
+    One more imporatant thing I forget to mention, "worker threads" in Node.js
+    There are so many conversation around, Does it have real usage in production or it exits, but not adopted still yet?
     
-    Since the topic is large, we can do it step by step.
+    what I've seen on YouTube, there're so many videos on these topics, but since I've talk someone with lots of industry
+    experience in Nodejs in seniority level. what I've found 
+
+    # Why adoption feels “limited”- 
+    
+    Because people often solve scaling differently:
+    
+        Instead of worker threads, teams often use:
+        multiple Node processes (cluster, PM2, Kubernetes replicas)
+        background job queues
+        separate microservices
+        Rust/Go/Python services for CPU work
+
+    Creating workers repeatedly is expensive.
+
+        Production apps usually use:
+        
+        worker pools
+        libraries like:
+            Piscina
+            workerpool
+
+    So I want to ask you the same question, do we have any usage in our system, specially in my team?
+    If yes, then teach me worker threads, side by side company with java, multi-threading model.
+
+    so at this point, you can there're so many concepts, and they're overlaping, confusing. Even senior engineers struggles
+    here. That's why I asked you during creating content, you should always put comparisons like why this vs that, when 
+    to use what. because these are super confusing in itself. Always starts "from first principle" styles teaching like 
+    the problem we're trying to solve, understaning it properly and then which tool perfectly solves this.
+    
+    Finally use case of them in our system, specifically in the service our team work on. (STAR format + diagram)
+
+    Since the topic is large, we can do it step by step, module by module.
