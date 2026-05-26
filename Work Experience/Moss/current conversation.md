@@ -530,3 +530,22 @@ You to me:
     **Shall I begin Story 1 now?**
 
 --------------------------------------------
+Me to You: 
+    Sure! go ahead.
+
+---------------------------------------------------
+You to me:
+    Okay, I'm done writing the Block 1 (Months 1-3): "Finding My Feet". It's saved as a folder named "Block 1" inside
+    Module 12: My role, responsibility & contribution.
+    
+    Now It has 3 stories and they're saved as a file named
+    - Story 1.md
+    - Story 2.md
+    - Story 3.md
+    
+    Hence Block 1 complete. All three stories done.
+    Ready for Block 2 — Months 4 to 6: "Building Confidence"
+    The first story in Block 2 is the N+1 query bug — your first real performance story with actual numbers, Datadog 
+    evidence, and a lesson that changed how you read code from that point on.
+
+    Shall I begin?
