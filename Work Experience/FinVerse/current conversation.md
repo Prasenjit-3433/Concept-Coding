@@ -497,7 +497,7 @@ Me to you:
         multiple Node processes (cluster, PM2, Kubernetes replicas)
         background job queues
         separate microservices
-        Rust/Go/Python services for CPU work
+        Rust/Go/Python services for CPU work.
 
     Creating workers repeatedly is expensive.
 
@@ -519,3 +519,13 @@ Me to you:
     Finally use case of them in our system, specifically in the service our team work on. (STAR format + diagram)
 
     Since the topic is large, we can do it step by step, module by module.
+
+
+---------------------------------------------------------------------------
+You to me:
+    the BullMQ — Content Plan is ready and it's saved as a file - "Content Plan.md" in Module 7: BullMQ
+    It has a total of 9 chapters and each of them will be saved inside the same Module 7: BullMQ.
+
+    Chapter 1: The Problem Space is saved as a file named - "Chapter 1.md" in in Module 7: BullMQ.
+    Chapter 2: Node.js Execution Model is saved as a file named - "Chapter 2.md" in in Module 7: BullMQ.
+    Chapter 3: Containers, CPUs, and Why This Matters for BullMQ is saved as a file named - "Chapter 3.md" in in Module 7: BullMQ.
