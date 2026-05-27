@@ -530,3 +530,4 @@ You to me:
     Chapter 2: Node.js Execution Model is saved as a file named - "Chapter 2.md" in in Module 7: BullMQ.
     Chapter 3: Containers, CPUs, and Why This Matters for BullMQ is saved as a file named - "Chapter 3.md" in in Module 7: BullMQ.
     Chapter 4: BullMQ Architecture: Core Concepts is saved as a file named - "Chapter 4.md" in in Module 7: BullMQ.
+    Chapter 5: Concurrency, Worker Pools, and Scaling is saved as a file named - "Chapter 5.md" in in Module 7: BullMQ.
