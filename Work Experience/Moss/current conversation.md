@@ -549,3 +549,23 @@ You to me:
     evidence, and a lesson that changed how you read code from that point on.
 
     Shall I begin?
+
+---------------------------------------------------------
+Me to You:
+    Sure, go ahead!!
+
+--------------------------------------------------------
+You to me:
+    Okay, I'm done writing the BLOCK 2 (Months 4-6): "Building Confidence". It's saved as a folder named "Block 2" inside
+    Module 12: My role, responsibility & contribution.
+
+    Now It has 4 stories and they're saved as a file named
+    - Story 4.md
+    - Story 5.md
+    - Story 6.md
+    - Story 7.md
+    
+    Ready for Block 3 — Months 7-9: "Expanding Horizon." The first story is the Kafka consumer implementation — your 
+    first real exposure to event-driven architecture, introduced by Arjun through pair programming. 
+
+    Shall I begin?
