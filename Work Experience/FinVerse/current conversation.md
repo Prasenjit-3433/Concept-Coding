@@ -132,13 +132,14 @@ You to me:
        3. System Design & Data Flows
        4. Deep Dive: Team Structure & Ownership ← *pivot point — everything gets scoped to your team from here*
        5. Database Selection & Schema Design (PostgreSQL vs MongoDB + Prisma)
-       6. RabbitMQ & BullMQ — architecture, patterns, SAGA/Outbox if applicable
-       7. API Design — scoped to your team's services, mobile-first (React Native)
-       8. Caching — Redis deep dive, invalidation, multi-level, production failure modes
-       9. Transaction Handling — PostgreSQL + Prisma, concurrency, isolation levels, async edge cases
-       10. CI/CD & DevOps
-       11. Monitoring, Distributed Tracing & Logging — OpenTelemetry → Datadog
-       12. Your Role, Responsibilities, Contributions & Ownership as an SDE
+       6. RabbitMQ — architecture, patterns, SAGA/Outbox if applicable
+       7. BullMQ - architecture, patterns in Core Product Service
+       8. API Design — scoped to your team's services, mobile-first (React Native)
+       9. Caching — Redis deep dive, invalidation, multi-level, production failure modes
+       10. Transaction Handling — PostgreSQL + Prisma, concurrency, isolation levels, async edge cases
+       11. CI/CD & DevOps
+       12. Monitoring, Distributed Tracing & Logging — OpenTelemetry → Datadog
+       13. Your Role, Responsibilities, Contributions & Ownership as an SDE
     
     ---
     
@@ -270,9 +271,9 @@ You to me:
 
 -------------------------------------------------------------------------   
 Me to you:
-    Hold a second!
+    Hold a second!...you're trying to write RabbitMQ & BullMQ together in a response.
     RabbitMQ & BullMQ, they're itself is big big topic
-    devide them into different steps like
+    divide them into different steps like
     Step 6: RabbitMQ
     Step 7: BullMQ
     
@@ -526,8 +527,27 @@ You to me:
     the BullMQ — Content Plan is ready and it's saved as a file - "Content Plan.md" in Module 7: BullMQ
     It has a total of 9 chapters and each of them will be saved inside the same Module 7: BullMQ.
 
-    Chapter 1: The Problem Space is saved as a file named - "Chapter 1.md" in in Module 7: BullMQ.
-    Chapter 2: Node.js Execution Model is saved as a file named - "Chapter 2.md" in in Module 7: BullMQ.
-    Chapter 3: Containers, CPUs, and Why This Matters for BullMQ is saved as a file named - "Chapter 3.md" in in Module 7: BullMQ.
-    Chapter 4: BullMQ Architecture: Core Concepts is saved as a file named - "Chapter 4.md" in in Module 7: BullMQ.
-    Chapter 5: Concurrency, Worker Pools, and Scaling is saved as a file named - "Chapter 5.md" in in Module 7: BullMQ.
+    Chapter 1: The Problem Space is saved as a file named - "Chapter 1.md" in Module 7: BullMQ.
+    Chapter 2: Node.js Execution Model is saved as a file named - "Chapter 2.md" in Module 7: BullMQ.
+    Chapter 3: Containers, CPUs, and Why This Matters for BullMQ is saved as a file named - "Chapter 3.md" in Module 7: BullMQ.
+    Chapter 4: BullMQ Architecture: Core Concepts is saved as a file named - "Chapter 4.md" in Module 7: BullMQ.
+    Chapter 5: Concurrency, Worker Pools, and Scaling is saved as a file named - "Chapter 5.md" in Module 7: BullMQ.
+    Chapter 6: Job Lifecycle — Retries, Delays, Priorities, and Scheduling is saved as a file named - "Chapter 6.md" in Module 7: BullMQ.
+    Chapter 7: Failure Handling and Production Resilience is saved as a file named - "Chapter 7.md" in Module 7: BullMQ.
+    Chapter 8: BullMQ at FinVerse: Every Queue, Every Decision is saved as a file named - "Chapter 8.md" in Module 7: BullMQ.
+    Chapter 9: Worker Threads — Honest Production Reality is saved as a file named - "Chapter 9.md" in Module 7: BullMQ.
+
+    So we're completely done writing Step 7: BullMQ. Next task is writing Step 8: API Design — scoped to your team's services,
+    mobile-first (React Native). Since I'm working in "Core Product Team", we should only be concerned with API in 
+    "Core Product Team" service, which was a modular monolith. In fact, there was so many modules and my primary
+    ownership was "Accounts & Open Banking" module.
+    
+    It's not possible to do case of all API's in all services. Moreover, when I did not work in those services or API's 
+    in those services, what is the point of studying. Rather we should focus on API's inside "Core Product Team" and 
+    even more special API's in "Accounts & Open Banking" module because I build them.
+
+    What are best practices, patterns etc. we follow in our team, what was my thought when designing, building API's etc.
+    How I did the documentations of API's I build in "Accounts & Open Banking" module, etc. If I miss anything, add it.
+    These the things a person while working in a team, production - which is sometimes directly gets asked in interview.
+
+    So let's start writing Step 8: API Design!

@@ -569,3 +569,27 @@ You to me:
     first real exposure to event-driven architecture, introduced by Arjun through pair programming. 
 
     Shall I begin?
+
+--------------------------------------------------------
+You to me:
+    Okay, I'm done writing the BLOCK 3 (Months 7-9): "Expanding Horizon". It's saved as a folder named "Block 3" inside
+    Module 12: My role, responsibility & contribution.
+
+    Now It has 4 stories and they're saved as a file named
+    - Story 8.md
+    - Story 9.md
+    - Story 10.md (pending...)
+    - Story 11.md (pending...)
+
+--------------------------------------------------------
+You to me:
+    Okay, I'm done writing the BLOCK 4 (Months 10-12): "Trusted Contributor". It's saved as a folder named "Block 4" inside
+    Module 12: My role, responsibility & contribution.
+
+    Now It has 4 stories and they're saved as a file named
+    - Story 12.md
+    - Story 13.md
+    - Story 14.md
+    - Story 15.md
+
+    Ready for BLOCK 5 (Months 13-15): "Feature Ownership".
