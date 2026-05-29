@@ -574,3 +574,25 @@ You to me:
     Step 11: CI/CD & DevOps is complete. Save as `DevOps & Deployment.md` in `Module 11: DevOps & Deployment`.
     
     Ready for Step 12: Monitoring, Distributed Tracing & Logging — OpenTelemetry → Datadog.
+
+-----------------------------------------------------------------
+Me to you:
+    Wait a minute!
+    I want to tell you something, I've no idea about how Monitoring, Distributed Tracing & Logging etc. works in Nestjs. 
+    I've some idea around how things works in java, and have some notes around them. Kindly go through those 2 "overview.md"
+    files, provided by GitHub repo. It contains all my learning around Monitoring, Distributed Tracing & Logging in Spring
+    boot tech stack.
+    
+    But I've never ever worked around this in Node.js tech stack, so you've to teach me about these, you can't directly
+    jump into writing code. Specially, around APM stuff and this is the most important thing when it comes to interview,
+    because when you write, "improved performance by X%", the interviewer asks, "how did you measure that"
+
+    So we've to understand observibility, APM, monitoring, tracing, logging - all these buzzwords in-depth from the 
+    ground up to production level (like how do we do each of these in Nestjs with code implementation), what are the    
+    standard best practices followed in production. At the same time, you've to give me side by side comparision  
+    between Java stack & Nestjs stack, so that it can create map in mind.
+    
+    Finally applying all the concepts just learned in Nestjs following STAR pattern and here you're explain me use cases
+    while implementing in Nestjs through "Core product service" because this is the service where my team worked on.
+    
+    Since the content would be long, so plan the content syllabus and then go in-depth in each topic
