@@ -551,3 +551,14 @@ You to me:
     These the things a person while working in a team, production - which is sometimes directly gets asked in interview.
 
     So let's start writing Step 8: API Design!
+
+-----------------------------------------------------------------
+You to me:
+    Step 8 is complete and ready to be saved as API Design.md in Module 8: API Design.
+    Ready for Step 9: Caching — Redis deep dive, invalidation, multi-level, production failure modes.
+
+-----------------------------------------------------------------
+You to me:
+    Step 9 is complete and ready to be saved as `Caching Strategy.md` in `Module 9: Caching Strategy`.
+
+    Ready for Step 10: Transaction Handling — PostgreSQL + Prisma, concurrency, isolation levels, and the async edge cases with BullMQ.
