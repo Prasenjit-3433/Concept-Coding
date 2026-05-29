@@ -562,3 +562,15 @@ You to me:
     Step 9 is complete and ready to be saved as `Caching Strategy.md` in `Module 9: Caching Strategy`.
 
     Ready for Step 10: Transaction Handling — PostgreSQL + Prisma, concurrency, isolation levels, and the async edge cases with BullMQ.
+
+----------------------------------------------------------------
+You to me:
+    Step 10: Transaction Handling is complete. Save as `Transaction Handling.md` in `Module 10: Transaction Handling`.
+    
+    Ready for Step 11: CI/CD & DevOps whenever you are.
+
+-----------------------------------------------------------------
+You to me:
+    Step 11: CI/CD & DevOps is complete. Save as `DevOps & Deployment.md` in `Module 11: DevOps & Deployment`.
+    
+    Ready for Step 12: Monitoring, Distributed Tracing & Logging — OpenTelemetry → Datadog.
