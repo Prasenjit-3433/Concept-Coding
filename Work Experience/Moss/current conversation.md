@@ -578,7 +578,7 @@ You to me:
     Now It has 4 stories and they're saved as a file named
     - Story 8.md
     - Story 9.md
-    - Story 10.md (pending...)
+    - Story 10.md
     - Story 11.md (pending...)
 
 --------------------------------------------------------
