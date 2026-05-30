@@ -579,7 +579,7 @@ You to me:
     - Story 8.md
     - Story 9.md
     - Story 10.md
-    - Story 11.md (pending...)
+    - Story 11.md
 
 --------------------------------------------------------
 You to me:
@@ -593,3 +593,15 @@ You to me:
     - Story 15.md
 
     Ready for BLOCK 5 (Months 13-15): "Feature Ownership".
+
+-------------------------------------------------------------
+You to me:
+    Okay, I'm done writing the BLOCK 5 (Months 13-15): "Feature Ownership". It's saved as a folder named "Block 5" inside
+    Module 12: My role, responsibility & contribution.
+
+    Now It has 3 stories and they're saved as a file named
+    - Story 16.md
+    - Story 17.md
+    - Story 18.md (pending...)
+    
+    Ready for BLOCK 6 (Months 16-18): "Growing Into the Role"
