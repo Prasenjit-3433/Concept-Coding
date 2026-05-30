@@ -596,3 +596,32 @@ Me to you:
     while implementing in Nestjs through "Core product service" because this is the service where my team worked on.
     
     Since the content would be long, so plan the content syllabus and then go in-depth in each topic
+
+------------------------------------------------------------------
+You to me:
+    Okay, the content plan is ready & it's saved as Content Plan.md in Module 12: Monitoring, Tracing & Logging
+    Ready for chapter 1?
+
+---------------------------------------------------------------
+You to me:
+    Chapter 1 is ready & it's saved as Chapter 1.md in Module 12: Monitoring, Tracing & Logging.
+    
+    Ready for Chapter 2 — Metrics: Measuring What's Happening Right Now — where we go deep on metric types (counters, 
+    gauges, histograms), how NestJS exposes them, what FinVerse actually monitors, and how you build the 
+    "before and after" numbers for an interview performance story.
+
+------------------------------------------------------------------
+You to me:
+    Chapter 2 done & it's saved as Chapter 2.md in Module 12: Monitoring, Tracing & Logging.
+
+    Ready for Chapter 3 — Distributed Tracing: Following a Request Across Services — where we go deep on Trace IDs, 
+    Span IDs, the W3C `traceparent` header, how NestJS auto-instrumentation works, how the Go service participates in
+    the same trace, and the complete end-to-end trace for a FinVerse request in Datadog APM.
+
+----------------------------------------------------------------
+You to me:
+    Chapter 3 done & it's saved as Chapter 3.md in Module 12: Monitoring, Tracing & Logging.
+
+    Ready for Chapter 4 — Logging: The Detail Layer — where we go deep on Pino vs Winston, structured JSON logging, 
+    AsyncLocalStorage as the Node.js equivalent of MDC/ThreadLocal, Correlation ID propagation in NestJS, and how 
+    FinVerse ensures log lines are always linked to their trace.
