@@ -613,5 +613,5 @@ You to me:
 
     Now It has 3 stories and they're saved as a file named
     - Story 19.md
-    - Story 20.md (pending...)
+    - Story 20.md
     - Story 21.md (pending...)
