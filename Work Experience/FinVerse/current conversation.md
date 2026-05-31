@@ -625,3 +625,19 @@ You to me:
     Ready for Chapter 4 — Logging: The Detail Layer — where we go deep on Pino vs Winston, structured JSON logging, 
     AsyncLocalStorage as the Node.js equivalent of MDC/ThreadLocal, Correlation ID propagation in NestJS, and how 
     FinVerse ensures log lines are always linked to their trace.
+
+-------------------------------------------------------------------
+You to me:
+    Chapter 4 done & it's saved as Chapter 4.md in Module 12: Monitoring, Tracing & Logging.
+
+    Ready for Chapter 5 — OpenTelemetry: The Glue Layer — where we understand what the OTEL Collector is and why FinVerse
+    runs it, how metrics and traces and logs all flow through one pipeline, how the Go service connects to the same 
+    pipeline, and the complete end-to-end data flow from NestJS code to Datadog dashboard.
+
+-------------------------------------------------------------------
+You to me:
+    Chapter 4 done & it's saved as Chapter 4.md in Module 12: Monitoring, Tracing & Logging.
+
+    Ready for Chapter 6 — Alerting & Datadog: Turning Signals Into Action — where we go deep on Datadog Monitors, SLOs, 
+    FinVerse's specific alert rules for Core Product Service, alert fatigue, and exactly how the on-call runbook works 
+    when an alert fires.
