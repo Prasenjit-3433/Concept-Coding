@@ -602,6 +602,16 @@ You to me:
     Now It has 3 stories and they're saved as a file named
     - Story 16.md
     - Story 17.md
-    - Story 18.md (pending...)
+    - Story 18.md
     
     Ready for BLOCK 6 (Months 16-18): "Growing Into the Role"
+
+-------------------------------------------------------------
+You to me:
+    Okay, I'm done writing the BLOCK 6 (Months 16-18): "Growing Into the Role". It's saved as a folder named "Block 5" inside
+    Module 12: My role, responsibility & contribution.
+
+    Now It has 3 stories and they're saved as a file named
+    - Story 19.md
+    - Story 20.md
+    - Story 21.md

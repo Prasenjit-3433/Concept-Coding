@@ -636,8 +636,20 @@ You to me:
 
 -------------------------------------------------------------------
 You to me:
-    Chapter 4 done & it's saved as Chapter 4.md in Module 12: Monitoring, Tracing & Logging.
+    Chapter 5 done & it's saved as Chapter 5.md in Module 12: Monitoring, Tracing & Logging.
 
     Ready for Chapter 6 — Alerting & Datadog: Turning Signals Into Action — where we go deep on Datadog Monitors, SLOs, 
     FinVerse's specific alert rules for Core Product Service, alert fatigue, and exactly how the on-call runbook works 
     when an alert fires.
+
+-------------------------------------------------------------------
+You to me:
+    Chapter 6 done & it's saved as Chapter 6.md in Module 12: Monitoring, Tracing & Logging.
+
+    Ready for Chapter 7 — Observability at FinVerse: End-to-End Setup — where we put everything together: the complete
+    NestJS initialisation code, the full request lifecycle with observability, the STAR-format performance improvement 
+    story, and the complete answer to "how did you measure that?"
+
+-------------------------------------------------------------------
+You to me:
+    Chapter 7 done & it's saved as Chapter 7.md in Module 12: Monitoring, Tracing & Logging.
