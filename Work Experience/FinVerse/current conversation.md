@@ -653,3 +653,80 @@ You to me:
 -------------------------------------------------------------------
 You to me:
     Chapter 7 done & it's saved as Chapter 7.md in Module 12: Monitoring, Tracing & Logging.
+
+--------------------------------------------------------------------
+Me to you:
+    At this point, we've knowledge of everything in our system. So we're ready to write Step 13: My role, responsibility
+    & contribution.
+    
+    Here I want to make few things clear. Look at who I'm - a recent grad, with knowledege from watching tutorials,
+    building some projects watching tutorials from youtube. Altough as far now, we discussed so many production level
+    concepts in detail, it doesn't mean I can or I've implemented all of these thing on my own, we dicussed them, so
+    that I can learn from this about how production system work.
+
+    Hence when writing My role, responsibility & contribution, you've to keep these things in mind. so the difficuly of 
+    tasks would totally be designed based on that.
+    
+    First, we need to plan our journey - those 12 months. This is not going to be very easy.
+    because we have to carefully put the tasks assigned to me based on my level because I'm totally a junior at the time of joining
+    Then -
+      *     how senior guys in team mentored me, 
+      *     how I navigated challenges. 
+      *     how did I handled situations like I was assigned a task which need to have knowledge of some tool or tech, which I never heard of....
+      *     mistakes I've done, what did I learned from it
+      *     how did I collaborated with my peers
+      *     how did I help them when they stuck and vice versa
+      *     how did I code review other's code...because lots of things can be learned through reading other's code.
+      *     how did I interacted with stakeholders
+      *     sprint planing with people
+      *     How did I manages any conflict if any happened.
+      *     how did I take ownership
+      *     how did I take leadership even when I was not senior etc.... So on
+
+    and all of these have to be written in a real conversation like format like a storytelling but also maintaining STAR format:
+    One of the biggest challenges candidates face in behavioral interviews is structuring their answers in a way that is clear, concise, and compelling.
+    Imagine you ask a candidate, "Tell me about a challenging project". They might respond:
+    "Oh yeah, there was this one time we had a really slow API. It was causing a lot of problems for users. We all worked really hard on it for a couple of weeks, looking into different things, and eventually, we figured it out and made it faster. The team was pretty happy."
+    What did you learn from this answer? Almost nothing.
+
+      * Who is "we"?
+          * What was the candidate's specific role?
+          * What did they actually do?
+          * How much faster did the API get?
+          * What was the business impact?
+            Without structure, answers often become long-winded, unfocused, or incomplete, making it harder for interviewers to assess your skills.
+            The STAR Method is a simple yet powerful framework that helps you organize your stories so they highlight exactly what interviewers are looking for.
+            What is STAR?
+            STAR is an acronym that stands for a four-part story structure:
+
+          * S – Situation: Briefly set the context. Describe the event or situation you were in.
+          * T – Task: Describe your specific goal or responsibility in that situation.
+          * A – Action: Detail the specific actions you took to address the situation and complete your task.
+          * R – Result: Explain the outcome of your actions. Quantify it whenever possible.
+    
+    It’s a storytelling technique that ensures your answers cover context, your specific role, what you did, and the measurable outcome.
+    Think of it as the recipe for a perfect interview answer. It ensures you provide exactly what the interviewer needs to hear, in a logical order, without forgetting crucial details or rambling about irrelevant ones.
+
+    -------------------------------------------
+    Moreover, we're not gonna suddenly jump into writing work experience. we're gonna write my work experience as how I learned & grew as 
+    a Node.js, Nestjs backend engineer working there because this is my first time working as a Node.js dev after my grad. 
+    (athough I've learn node.js development through courses, built projects, which you can see in "knowledge base")...
+    but still this's my first time working in real production...so some ramp-up required.
+    so we're gonna break the entire 1 years i.e. 12 months, into 4 parts with each part of 3 months time. so that we can
+    focus on detailing, quality on what I learned, how I learned, how I worked in a team collaborating with others, got 
+    mentorship (pay lots of focus on this!), what mistakes I done, what challenges I faces & how did I manages them, how
+    did I resolved conflicts with team mates & managers etc.
+
+    we're gonna write this following "STAR" methodology strictly.
+    
+    # Note: btw, I forget to mention a very important thing....this is startup like series A stage. So while writing
+    any step, you have to keep this thing in mind that the scale would different than a big mnc or faang, working style,
+    technology stack etc. will also be different.
+
+    Throughout any step,
+    You've to always clean & clear...don't put buzzward!....it should be easy to understand, decision behind design based 
+    on our requirement & usecase, business need etc....try to explicite, so that I can have clear understanding of 
+    the whole system Use detailed diagram to explain your thoughts, it helps a lot to understand!
+    
+    Don't write anything, just read in detail & understand the context!
+    If you have any problem, pls let me know.
