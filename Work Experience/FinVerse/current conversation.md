@@ -811,3 +811,11 @@ You to me:
 
     Ready for Quarter 4: From executor to contributor — earning your place.
 -------------------------------------------------------
+You to me:
+    Okay, I'm done writing the Quarter 4: From executor to contributor — earning your place. It's saved as a folder
+    named "Quarter 4" inside Module 13: My role, responsibility & contribution.
+
+    Now It has 3 stories and they're saved as a file named
+    - Month 10.md
+    - Month 11.md 
+    - Month 12.md 
