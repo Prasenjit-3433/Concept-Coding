@@ -748,9 +748,13 @@ Me to you:
     task, then teach it before jumping into the task.
     so that I can have lots of learning!
     
-    and you should write each month (like from month 1 to month 12) like a self-contained story 
-    - first if any foundational knowledge required (if any!)
-    - then STAR story
+    and you should write each month (like from month 1 to month 12) like a self-contained story. One single response one
+    single month, don't try to write more than 1 month in one single response.
+    so that the explanation stays comprehensive, Don't compromise on quality of explanation. It should be very clean &
+    clear, no buzzwords... Use detailed diagrams to explain your thoughts with raw code implementation, it helps a lot 
+    to understand.
+    
+    Otherwise, it becomes a nightmare to undertsand stuff!    
 
     Each month is self-contained, can be stored as a separate file as in one response. It will help to manage 12 months in an organized way!
     I'm saying this because I'm gonna store this whole experience  like this
@@ -773,7 +777,7 @@ Me to you:
     
 ------------------------------------------------
 You to me:
-    Okay, I'm done writing the Quarter 1. It's saved as a folder named "Quarter 1" inside
+    Okay, I'm done writing the Quarter 1: Drinking from the Firehose. It's saved as a folder named "Quarter 1" inside
     Module 13: My role, responsibility & contribution.
 
     Now It has 3 stories and they're saved as a file named
@@ -781,4 +785,16 @@ You to me:
     - Month 2.md (pending...)
     - Month 3.md (Pending...)
     
-    Ready for Quarter 2.
+    Ready for Quarter 2: First real ownership — building, not just fixing.
+---------------------------------------------------
+You to me:
+    Okay, I'm done writing the Quarter 2: First real ownership — building, not just fixing. It's saved as a folder 
+    named "Quarter 2" inside Module 13: My role, responsibility & contribution.
+
+    Now It has 3 stories and they're saved as a file named
+    - Month 4.md
+    - Month 5.md (pending...)
+    - Month 6.md (Pending...)
+    
+    Ready for Quarter 3: Thinking beyond your own ticket.
+-------------------------------------------------------
