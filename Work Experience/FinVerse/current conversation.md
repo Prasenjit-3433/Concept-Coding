@@ -730,3 +730,55 @@ Me to you:
     
     Don't write anything, just read in detail & understand the context!
     If you have any problem, pls let me know.
+
+-------------------------------------------------------------
+You to you:
+    Here is 12 months plan and saved as Planning.md inside Module 13: My role, responsibility & contribution.
+    Pls go through it.
+
+
+---------------------------------------------------------
+Me to you:
+    it's fine!...finalize this.
+    
+    You can now start writing each quarter - in the form of stories, following the STAR format strictly.
+    
+    You should be clean & clear with your explanation, no buzzword, it should be super easy to understand, always make
+    assumption that I'm newbie, I don't things, if any prerequisites or foundational knowledge required before doing any
+    task, then teach it before jumping into the task.
+    so that I can have lots of learning!
+    
+    and you should write each month (like from month 1 to month 12) like a self-contained story 
+    - first if any foundational knowledge required (if any!)
+    - then STAR story
+
+    Each month is self-contained, can be stored as a separate file as in one response. It will help to manage 12 months in an organized way!
+    I'm saying this because I'm gonna store this whole experience  like this
+    Quarter 1:
+    - Month 1
+    - Month 2
+    - Month 3
+    
+    Quarter 2:
+    - Month 4
+    - Month 5
+    - Month 6
+    
+    Quarter 3:
+    - Month 7
+    - Month 8
+    - Month 9
+    
+    and so on...
+    
+------------------------------------------------
+You to me:
+    Okay, I'm done writing the "Month 1: Orientation & First Contribution". It's saved as a folder named "Quarter 1" inside
+    Module 13: My role, responsibility & contribution.
+
+    Now It has 3 stories and they're saved as a file named
+    - Month 1.md
+    - Month 2.md (pending...)
+    - Month 3.md (Pending...)
+    
+    Ready for Month 2: Expanding Scope.
