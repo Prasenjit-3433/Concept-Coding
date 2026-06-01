@@ -773,7 +773,7 @@ Me to you:
     
 ------------------------------------------------
 You to me:
-    Okay, I'm done writing the "Month 1: Orientation & First Contribution". It's saved as a folder named "Quarter 1" inside
+    Okay, I'm done writing the Quarter 1. It's saved as a folder named "Quarter 1" inside
     Module 13: My role, responsibility & contribution.
 
     Now It has 3 stories and they're saved as a file named
@@ -781,4 +781,4 @@ You to me:
     - Month 2.md (pending...)
     - Month 3.md (Pending...)
     
-    Ready for Month 2: Expanding Scope.
+    Ready for Quarter 2.
