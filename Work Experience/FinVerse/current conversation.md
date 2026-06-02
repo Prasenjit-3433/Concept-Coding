@@ -822,3 +822,24 @@ You to me:
     - Month 12.md 
 
 So we're done writing Module 13: My role, responsibility & contribution!
+
+---------------------------------------------------------
+Me to you:
+    Okay!...finally we're done writing my work experience. you also wrote diagrams, code snippets, and explanations in 
+    each story. Unfortunately when I start reading from the start, it doesn't make fully sence to me because I've no 
+    idea about the file & folder structures in my codebase, at least the services my team was working. as a result, when
+    you write code in a file, I can't full imagine, ok, this is the file belongs to this folder and this folder has a 
+    purpose of that.
+    if we can diagram of file & folder structure in the services our team work specially, that will be really good. Other
+    services where our team doesn't own, we don't need to deep dive into their code. But We should definitely deep dive 
+    into the "Core Product Service" codebase.
+
+    so can you help me out here!
+
+------------------------------------------------------------
+You to me:
+    Looking at all the materials carefully, I can see the Core Product Service is a NestJS modular monolith. Let me 
+    build out the complete folder structure with clear explanations of what lives where and why.
+
+    It's ready & saved as a file with name - Codebase Walkthrough.md in folder "Codebase Walkthrough" under Module 13: 
+    My role, responsibility & contribution.
