@@ -614,4 +614,6 @@ You to me:
     Now It has 3 stories and they're saved as a file named
     - Story 19.md
     - Story 20.md
-    - Story 21.md (pending...)
+    - Story 21.md
+
+    We're done writing Module 12: My role, responsibility & contribution.
