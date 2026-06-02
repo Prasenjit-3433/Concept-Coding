@@ -1,150 +1,153 @@
-# Month 1: Orientation & First Contribution
+# Quarter 1 — Month 1: First Days in a Real Codebase
 
 ---
 
-## Theme: *Drinking from the firehose*
+## Foundational Knowledge: What You Need Before These Stories
+
+Before the stories, two concepts are worth understanding clearly. Both come up directly in Month 1. Without this context, the stories will feel like a list of events. With it, you will understand why each moment mattered.
 
 ---
 
-## Foundational Knowledge: What You Need to Understand Before This Month's Stories
+### Concept 1: What a Code Review Actually Is — And Why It Feels Uncomfortable at First
 
-Before we get into the stories, there are two concepts that come up in Month 1 that you need to understand clearly. If you skip this section, the stories will feel like they are just describing events. With this section, you will understand *why* each moment mattered.
+In your personal projects and tutorial builds, you wrote code and it either worked or it didn't. Nobody else looked at it. There was no second opinion. You were the only judge.
 
----
+In a professional engineering team, that changes completely. Every single piece of code that goes into the production codebase — no matter how small — is reviewed by at least one other engineer before it is merged. This process is called a **code review** or a **PR review** (PR stands for Pull Request — the mechanism on GitHub where you propose your changes and others comment before approving).
 
-### Concept 1: What a Code Review Actually Is (and Why It Feels Uncomfortable at First)
-
-In your tutorial projects and personal projects, you wrote code and it either worked or it did not. Nobody else looked at it. There was no second opinion.
-
-In a professional team, every single piece of code that goes into the production codebase is reviewed by at least one other engineer before it is merged. This is called a **code review** or a **PR review** (PR stands for Pull Request — the mechanism on GitHub where you propose your changes and others can comment on them before approving).
-
-Here is why code review exists:
+Here is why it exists:
 
 ```
 WHY CODE REVIEW EXISTS
 
 1. Catch bugs before they reach production
-   The reviewer might spot something the author missed.
-   Two pairs of eyes are better than one.
+   Two pairs of eyes catch things one pair misses.
+   A reviewer might spot a security hole, a performance
+   issue, or a logic error the author was too close to see.
 
-2. Share knowledge across the team
-   When you review someone's code, you learn how they think.
-   When they review yours, they teach you things you did not know.
+2. Spread knowledge across the team
+   When Lucas reviews your code, you learn how he thinks.
+   When you read his review comments, you absorb patterns
+   you would have taken months to discover on your own.
 
 3. Maintain consistency
-   A team of 6 engineers needs to write code that looks and behaves
-   consistently. Code review enforces the team's standards.
+   6 engineers writing code independently will drift in style,
+   naming conventions, and patterns. Reviews enforce a shared
+   standard so the codebase stays readable for everyone.
 
 4. Build shared ownership
-   Code review means no one person "owns" a piece of code alone.
-   The whole team is familiar with changes. This matters when
-   the author is on leave and something breaks.
+   Reviewed code is never just "your" code. The reviewer
+   understands what changed and why. When you are on leave
+   and something breaks, someone else can investigate.
 ```
 
-When you are new, code review feels uncomfortable. Someone more experienced is looking at your work and pointing out what is wrong with it. The natural reaction is defensiveness or embarrassment.
+When you are new, code review feels uncomfortable. Someone experienced is formally evaluating your work and telling you what is wrong with it. The instinctive reaction is defensiveness — "I tested this, it works."
 
-The mature way to receive code review — which you will learn in Month 1 — is to treat every comment as a free lesson. The reviewer is not judging you as a person. They are helping you write better software.
+The mature response — which you learn in Month 1 — is to treat every review comment as a free lesson. The reviewer is not judging you as a person. They are helping you write better software. The engineers who grow fastest are the ones who treat review comments like gold, not criticism.
 
 **What a PR comment looks like in practice:**
 
-When Lucas reviews your PR, he does not just say "approve" or "reject." He leaves specific comments on specific lines of code. Each comment might be:
+Lucas does not just write "approve" or "reject." He leaves specific comments on specific lines of code. Each comment might be:
 
-- A question: "why did you use `findFirst` here instead of `findUnique`?"
-- A suggestion: "consider using `select` instead of `include` here — it reduces the payload size"
-- A correction: "this is missing the `userId` filter, which means any user can query any account"
-- An educational observation: "test names should describe the behaviour, not the implementation"
+- A question: *"Why did you use `findFirst` here instead of `findUnique`?"*
+- A suggestion: *"Consider using `select` instead of `include` — it reduces the payload size"*
+- A correction: *"This is missing the `userId` filter — any authenticated user can query any account"*
+- An educational observation: *"Test names should describe the expected behaviour, not the implementation"*
 
-Your job when receiving these is to read each one carefully, understand it, implement the change if it makes sense, and ask a follow-up question if you do not understand.
+Your job is to read each one carefully, understand it, implement the change, and ask a follow-up question if something is unclear.
 
 ---
 
-### Concept 2: Prisma Migrations — What They Are and the Three Commands You Must Understand
+### Concept 2: Prisma Migrations — The Three Commands You Must Never Confuse
 
-When you built your own projects, you probably created database tables manually — either by writing SQL directly or by running some setup script once. In a production team, you cannot do that. Multiple engineers are working on the same codebase. The database schema changes over time. You need a reliable, repeatable, version-controlled way to evolve the database schema. That is what **database migrations** are.
+When you built your portfolio projects, you probably created your database tables by writing SQL directly or running a setup script once. That works fine when you are the only person working on the project and the data does not matter.
 
-**The simplest mental model:**
+In a production team, that approach breaks down immediately. Multiple engineers are touching the same codebase. The database schema evolves over time. You need a reliable, repeatable, version-controlled way to evolve that schema — so every developer's local environment, every staging environment, and production all stay in sync. That is what **database migrations** are.
 
-Think of migrations like a version history for your database schema. Every time the schema needs to change — a new table, a new column, a changed constraint — you create a migration file that describes exactly what needs to change. These files are committed to the Git repository. Every developer, every staging environment, and every production environment applies these migration files in order. Everyone ends up with the exact same database schema.
+**The simple mental model:**
 
-**How Prisma handles migrations:**
+Think of migrations as a version history for your database schema. Every time the schema needs to change — a new table, a new column, a modified constraint — you create a migration file that describes exactly what needs to change. These files live in the Git repository alongside your code. Every environment applies these migration files in order. Everyone ends up with the exact same schema.
 
-FinVerse uses Prisma as the ORM (the tool that connects NestJS code to PostgreSQL). Prisma has a migration system built in. Here is how it works:
+**How Prisma handles this:**
+
+FinVerse uses Prisma as the ORM (the tool that connects NestJS to PostgreSQL). Prisma has a migration system built in. Here is the workflow:
 
 ```
 PRISMA MIGRATION WORKFLOW
 
-Step 1: You change the Prisma schema file (schema.prisma)
+Step 1: You edit schema.prisma
         For example, you add a new field to the SyncLog model:
-        syncRetryCount Int @default(0)
+        transactionsDuplicate Int @default(0)
 
-Step 2: You run a command to generate the migration
-        This command compares your current schema file
-        against the last known migration state,
-        computes the difference,
+Step 2: You run a command
+        Prisma compares your current schema.prisma against
+        the last known migration state, computes the difference,
         and generates a SQL file that captures the change.
 
-Step 3: Prisma applies the SQL file to your local database.
+Step 3: Prisma applies that SQL to your local database
 
 Step 4: You commit both the schema change AND the generated
-        SQL migration file to Git.
+        SQL migration file to Git
 
-Step 5: When other developers pull your changes,
-        they run a command to apply the pending migration
-        to their local database.
+Step 5: Other developers pull your changes and run a command
+        to apply the pending migration to their local database
 
-Step 6: When you deploy to production, the same migration
-        file is applied to the production database.
+Step 6: When you deploy to staging or production, the same
+        migration file is applied there automatically via CI/CD
 ```
 
 **The three commands — and this is critical:**
-
-There are three Prisma migration commands. Confusing them in production can cause serious problems. You confuse two of them in Month 1. Here is what each one does:
 
 ```
 npx prisma migrate dev
 ────────────────────────────────────────────────
 Used in: LOCAL DEVELOPMENT ONLY. Never in production.
-What it does:
-  - Compares your schema.prisma against the last migration state
-  - Generates a new migration SQL file
-  - Applies it to your local development database immediately
-  - Also runs prisma generate (updates the Prisma client types)
 
-When to use it:
+What it does:
+  Compares your schema.prisma to the last migration state,
+  generates a new SQL migration file, and applies it to
+  your local database immediately.
+  Also runs prisma generate to update the Prisma client types.
+
+When to use:
   Whenever you change schema.prisma during development
-  and want to apply the change to your local database.
+  and want to see the change reflected in your local database.
+
+──────────────────────────────────────────────────────────────
 
 npx prisma migrate deploy
 ────────────────────────────────────────────────
 Used in: STAGING and PRODUCTION. This is the safe one.
-What it does:
-  - Does NOT generate new migrations
-  - Reads the list of migration files already committed to Git
-  - Applies only the ones that have not been applied yet
-  - Does nothing if everything is already up to date
 
-When to use it:
+What it does:
+  Does NOT generate new migrations.
+  Reads the migration files already committed to Git,
+  applies only the ones not yet applied to this database,
+  and does nothing if everything is already up to date.
+
+When to use:
   In your CI/CD pipeline when deploying to staging or production.
-  This is the command that GitHub Actions runs before starting
-  the new application containers.
+  This is what GitHub Actions runs before starting new containers.
+
+──────────────────────────────────────────────────────────────
 
 npx prisma migrate reset
 ────────────────────────────────────────────────
 Used in: LOCAL DEVELOPMENT ONLY. NEVER in production.
-What it does:
-  WARNING: This is the dangerous one.
-  - Drops your entire database
-  - Recreates it from scratch
-  - Replays ALL migration files from the beginning
-  - You lose all your local data
 
-When to use it:
-  Only when your local database is in a broken state
-  and you want to start completely fresh.
+What it does:
+  WARNING — this is the dangerous one.
+  Drops your entire database.
+  Recreates it from scratch.
+  Replays ALL migration files from the beginning.
+  You lose all your local data.
+
+When to use:
+  Only when your local database is completely broken
+  and you want a clean slate.
   Never run this when connected to staging or production.
 ```
 
-You will run `migrate reset` when you meant to run `migrate dev` in Month 1. It is one of the most common mistakes new engineers make with Prisma. The good news: on your local machine, the only thing you lose is your local test data. The bad news: if you somehow ran it against a production database, you would lose everything. This is why the connection string for production is a secret stored in AWS Secrets Manager and never visible to engineers directly.
+You will confuse `migrate dev` and `migrate reset` in Month 1. It is one of the most common mistakes new engineers make with Prisma. On your local machine, the only consequence is losing your local test data — annoying but harmless. If you somehow ran it against a production database, you would lose everything. This is why production database credentials are stored as secrets in AWS Secrets Manager and are never visible to engineers directly.
 
 ---
 
@@ -152,183 +155,252 @@ You will run `migrate reset` when you meant to run `migrate dev` in Month 1. It 
 
 ---
 
-### Story 1: The First Code Review
+### Story 1: The Codebase Is Nothing Like Your Projects
 
 **Background:**
 
-It is your first week. Lucas has assigned you your first real ticket: a bug where a transaction is showing up in the wrong spending category. A rule in the `MerchantRule` table has a regular expression (a pattern-matching string) that is too broad — it is matching merchant names it should not match.
+It is your first week. You have cloned the Core Product repository and run the setup command in the README. The Docker containers started — PostgreSQL, Redis, and the NestJS application — but you are staring at a folder structure with 40 files in it and you understand maybe a third of what you are looking at.
 
-For example: the rule meant to match `NETFLIX` is accidentally also matching `NETFLORIST` because the regex is written as `NET.*` which means "anything starting with NET." You need to narrow it.
-
-The fix is four lines. But the process of fixing it and getting it through review teaches you more than the fix itself.
+Your tutorial NestJS course had a project with 5 modules. This codebase has 9 modules, each with its own controllers, services, repositories, and DTOs. There is a BullMQ worker you have never heard of. There is a GoCardless integration you have never touched. The Prisma schema has 23 models. The domain language — PSD2, consent flows, MiFID II, requisitions, holdings — is a foreign language to you.
 
 ---
 
 **S — Situation:**
 
-It is week 2 of your contract. You have just fixed the merchant categorisation regex bug — four lines of code change, one updated unit test. You have opened your first Pull Request on GitHub and requested Lucas's review. This is the first time a professional engineer will formally evaluate your code. You are nervous. You are convinced the code is fine.
+It is day two. Lucas has scheduled a 2-hour onboarding call — a recorded walkthrough of the entire Core Product Service codebase. You join the call with a notebook open. He walks through the folder structure, the module boundaries, how BullMQ workers are registered, how RabbitMQ producers are wired up, why the modular monolith pattern was chosen. He speaks clearly and does not rush.
+
+You understand about 40% of what he says. You write down the rest as questions for later.
+
+After the call, he sends you a Notion document — "Week 1 Reading List" — with four items: the Architecture Decision Records explaining why key technical choices were made, the module ownership map, the team's PR checklist, and the coding conventions document. He says: "read all of this before picking up your first ticket. Questions are welcome."
 
 ---
 
 **T — Task:**
 
-Get the PR approved and merged. In the process, learn how the team's code review culture works.
+Understand the codebase well enough to make your first real contribution without breaking something. Get oriented. Ask good questions.
 
 ---
 
 **A — Action:**
 
-Lucas reviews the PR within a few hours. He approves the functional fix — the bug is indeed corrected. But he leaves six comments. Here is what each one was and what you learned from it:
+You spend the first three days reading. Not writing code — reading.
+
+You read the ADRs (Architecture Decision Records) in Notion. These are short documents that explain why specific decisions were made — why PostgreSQL over MongoDB, why a modular monolith instead of separate services, why Prisma instead of TypeORM. You understand maybe half of the reasoning at this stage, but the documents give you vocabulary. You know what the choices are, even if you do not yet fully understand why.
+
+You read the module ownership map and start mentally connecting names to responsibilities. Lucas owns Users and Auth. Tomasz owns Transactions and Budgeting. You are about to take ownership of Accounts and Open Banking, but Elena is still covering it for now. Understanding who owns what means you know who to ask when you are confused about something specific.
+
+You read the PR checklist. It is nine items long. Most of them are obvious in hindsight but you would have missed several of them without reading it explicitly: always include the `userId` filter on user-specific queries, always use `select` instead of `include` in mobile-facing endpoints, always write a test for the edge case not just the happy path. These feel abstract right now. They will become very concrete soon.
+
+You ask Lucas three questions across Slack over the three days, formatted exactly as he suggested during the call: context first, what you have already tried to understand, and then the specific thing you are stuck on. He answers all three within the day. None of the answers are dismissive. Each one is a short explanation followed by "does that make sense? Ask again if not."
+
+On day four, you pick up your first ticket.
+
+---
+
+**R — Result:**
+
+By the end of week one, you have not written a single line of production code. But you have a working mental map of the system. You know the module structure. You know who owns what. You know the team's conventions. You know the vocabulary.
+
+This investment pays off immediately. When your first ticket involves a model in the Transactions module, you already know it is Tomasz's domain and that you should run significant changes by him. When you write your first Prisma query, you already know to use `select` instead of `include`. You made fewer rookie mistakes in your first PR than you would have if you had jumped straight to coding on day one.
+
+What you took from week one: reading a professional codebase is a skill in itself. It is not glamorous. It does not feel like progress. But it is the foundation everything else builds on.
+
+---
+
+### Story 2: The First Code Review — Six Comments That Taught More Than Weeks of Reading
+
+**Background:**
+
+Your first ticket is deliberately scoped to be small and self-contained. A transaction is occasionally showing in the wrong spending category in the budgeting dashboard. The cause is a rule in the `MerchantRule` table — a regex pattern that is too broad and is matching merchant names it should not.
+
+The specific problem: the rule meant to categorise NETFLIX under Entertainment has the pattern `NET.*` — which means "anything starting with NET." This accidentally also matches NETFLORIST, a flower delivery service, which gets categorised as Entertainment instead of Shopping. The fix is simple: narrow the regex to `NETFLIX.*` or better yet, use a word boundary anchor so it only matches the exact word NETFLIX.
+
+The fix itself is four lines of code. Getting it through review teaches you more than the fix.
+
+---
+
+**S — Situation:**
+
+It is week two. You have understood the categorisation engine — how MerchantRule patterns are applied against transaction descriptions in order of priority, and how `isCategoryManual` protects user-overridden categories from being overwritten. The fix is clear to you. You write it, write a test, and open your first Pull Request.
+
+You write a PR description: "Fixed the regex in MerchantRule." You request Lucas's review. You are quietly confident the code is fine.
+
+---
+
+**T — Task:**
+
+Get the PR merged. Learn how the team's review culture actually works.
+
+---
+
+**A — Action:**
+
+Lucas reviews within a few hours. He approves the functional fix — the bug is correctly resolved. But he leaves six comments. Not rejections. Educational observations. Here is what each one was and what you learned from it:
 
 **Comment 1 — Test naming:**
 
-Your test was named `it('should fix the regex')`. Lucas's comment: "test names should describe the expected behaviour from a user's perspective, not describe the implementation. Something like: `it('should not categorise NETFLORIST as Entertainment')`."
+Your test: `it('should fix the regex')`
 
-*What you learned:* A good test name tells you what broke when the test fails. "should fix the regex" tells you nothing about what the system is supposed to do. "should not categorise NETFLORIST as Entertainment" tells you exactly what guarantee the test is making.
+Lucas's comment: *"Test names should describe the expected behaviour from a user's perspective, not describe the implementation. Something like: `it('should not categorise NETFLORIST as Entertainment')`"*
+
+What you learned: A good test name tells you what broke when the test fails. "Should fix the regex" tells you nothing about what the system is supposed to do. "Should not categorise NETFLORIST as Entertainment" tells you exactly what guarantee is being made. If this test fails in six months, the name tells you immediately what is broken without reading the test body.
 
 **Comment 2 — `findFirst` vs `findUnique`:**
 
-In the test setup you used `prisma.merchantRule.findFirst({ where: { pattern: '...' } })` to fetch a rule you had just created. Lucas's comment: "use `findUnique` when you are fetching by a field that is guaranteed to be unique (like `id` or a `@unique` field). Use `findFirst` when the field is not unique and you just want the first match. Using `findFirst` on a unique field works but implies to the reader that duplicates might exist."
+In your test setup, you fetched the merchant rule you had just created using `prisma.merchantRule.findFirst({ where: { pattern: '...' } })`. Lucas's comment: *"Use `findUnique` when fetching by a field guaranteed to be unique. Use `findFirst` when the field is not unique and you just want the first match. Using `findFirst` on a unique field works — but it implies to the reader that duplicates might exist. Choose the one that communicates the right intent."*
 
-*What you learned:* The choice between `findFirst` and `findUnique` is not just functional — it communicates intent to the reader of the code.
+What you learned: The choice between `findFirst` and `findUnique` is not just functional — it communicates intent. Code is read far more often than it is written. Every choice you make is a signal to the next person who reads it.
 
-**Comment 3 — PR description missing reproduction steps:**
+**Comment 3 — PR description missing context:**
 
-Your PR description said: "Fixed the regex in MerchantRule." Lucas's comment: "PR descriptions should include: what changed, why it changed, and how to verify it locally. Add reproduction steps — what merchant name was being miscategorised, what category it incorrectly got, what it should get."
+Lucas's comment: *"PR descriptions should include: what changed, why it changed, and how to verify it locally. Add reproduction steps — what merchant name was being miscategorised, what category it incorrectly got, what it should get instead."*
 
-*What you learned:* A PR description is documentation. Six months from now, when someone is trying to understand why a regex was changed, your PR description is all they have. Make it useful.
+What you learned: A PR description is documentation. Six months from now, when someone is trying to understand why a regex was changed, your PR description is all they have. "Fixed the regex" is useless. A proper description with reproduction steps is useful to anyone investigating a related issue in the future.
 
 **Comment 4 — Missing edge case in test:**
 
-You tested that `NETFLORIST` no longer matched the `NETFLIX` rule. Lucas's comment: "also add a test confirming that `NETFLIX` still matches correctly — verify that fixing the over-match did not break the intended match."
+You tested that NETFLORIST no longer matched the NETFLIX rule. Lucas's comment: *"Also add a test confirming NETFLIX still matches correctly. Verify that fixing the over-match did not break the intended match."*
 
-*What you learned:* When fixing a bug, test both the bug fix AND that you did not break the original intended behaviour. Both directions matter.
+What you learned: When fixing a bug, test both directions — the thing that was broken, and the thing that was working correctly. A fix that stops the wrong behaviour but also stops the right behaviour is not a fix.
 
 **Comment 5 — Unused import:**
 
-You had imported a Prisma type that you ended up not using in the test file. Lucas's comment: "remove unused imports — they add noise and suggest the code was written without care."
+You had imported a Prisma type that you ended up not using. Lucas's comment: *"Remove unused imports — they add noise and suggest the code was written without careful attention."*
 
-*What you learned:* Clean code is a signal. Small things like unused imports tell reviewers whether the author was paying attention.
+What you learned: Clean code is a signal. Small things like unused imports tell reviewers whether the author was paying attention to the whole file or just the lines they changed.
 
 **Comment 6 — Positive observation:**
 
-Lucas also left one positive comment: "the regex fix itself is correct and clean — good instinct to use a word boundary anchor instead of just narrowing the wildcard."
+Lucas also left one positive comment: *"The regex fix itself is correct and clean — good instinct to use a word boundary anchor rather than just narrowing the wildcard."*
 
-*What you learned:* Good reviewers balance critical observations with genuine positive feedback. This also taught you what "good instinct" looked like — so you could repeat it.
+What you learned: Good reviewers balance critical observations with genuine positive feedback. This also told you what "good instinct" looked like in this context — so you could recognise and repeat it.
 
 ---
 
 **R — Result:**
 
-You addressed all six comments, pushed the updated code, and Lucas approved on the second pass. The PR merged on day 10 of your contract.
+You addressed all six comments, pushed the updated code, and Lucas approved on the second pass. The PR merged on day ten of your contract.
 
-More importantly: you now had a mental checklist from a single PR review that shaped every PR you wrote afterwards:
+More importantly, you now had a mental checklist drawn from a single review cycle:
 
 - Test names describe expected behaviour, not implementation
-- `findFirst` vs `findUnique` — choose the one that communicates the right intent
-- PR descriptions include what, why, and how to verify
+- `findFirst` vs `findUnique` — choose the one that signals the right intent
+- PR descriptions need: what changed, why, and how to verify
 - Test both the fix and that the original behaviour still works
 - Remove unused imports
-- Read your own code as if you are the reviewer — would you approve it?
+- Read your own code as a reviewer would — would you approve it?
+
+You wrote these six points in a personal Notion page you titled "Things I Learned." You added to it every week for the rest of the contract.
 
 ---
 
-### Story 2: The Prisma Migration Mistake
+### Story 3: The Prisma Migration Mistake
 
 **Background:**
 
-Tomasz asks you to add a new field to the `SyncLog` model — a `transactionsDuplicate` integer field that tracks how many transactions were skipped during a sync because they already existed in the database (duplicates coming from GoCardless returning overlapping date windows). This is a small, self-contained task. It introduces you to Prisma migrations for the first time in a real codebase.
+Tomasz asks you to add a new field to the `SyncLog` model — a `transactionsDuplicate` integer field that tracks how many transactions were skipped during a sync because they already existed in the database. GoCardless sometimes returns overlapping date windows on consecutive syncs, and some transactions come back twice. The deduplication logic silently skips them, but there is currently no record of how many were skipped. Tomasz wants visibility.
+
+This is your first schema change in a real codebase. It introduces you to Prisma migrations in practice — not from a tutorial, but from a real task with real consequences if you get it wrong.
 
 ---
 
 **S — Situation:**
 
-It is week 3. You have been assigned to add `transactionsDuplicate Int @default(0)` to the `SyncLog` Prisma model. You make the change in `schema.prisma`. Now you need to apply it to your local database. You look at the Prisma documentation and see two commands that look similar: `migrate dev` and `migrate reset`. You are not sure which one to use. You pick the wrong one.
+It is week three. You open `schema.prisma` and add the field:
+
+```prisma
+model SyncLog {
+  id                    String     @id @default(uuid())
+  bankAccountId         String
+  syncType              String
+  status                SyncStatus
+  transactionsFetched   Int        @default(0)
+  transactionsInserted  Int        @default(0)
+  transactionsDuplicate Int        @default(0)   // ← new field
+  errorMessage          String?
+  startedAt             DateTime   @default(now())
+  completedAt           DateTime?
+}
+```
+
+Now you need to apply this change to your local database. You look at the Prisma documentation. You see three commands that sound similar. You are not sure which one applies here.
 
 ---
 
 **T — Task:**
 
-Add the new field to the Prisma schema, generate the migration, apply it to your local database, and open a PR.
+Apply the schema change to your local database, generate the migration file, and open a PR.
 
 ---
 
 **A — Action:**
 
-You edit `schema.prisma` and add the field:
+You read through the three commands quickly. `migrate dev` says "create and apply migrations." `migrate deploy` says "apply existing migrations." `migrate reset` says "reset the database."
+
+You think: I want to reset the schema to include the new field. You run `migrate reset`.
+
+Your terminal immediately shows:
 
 ```
-model SyncLog {
-  id                   String     @id @default(uuid())
-  bankAccountId        String
-  syncType             String
-  status               SyncStatus
-  transactionsFetched  Int        @default(0)
-  transactionsInserted Int        @default(0)
-  transactionsDuplicate Int       @default(0)   // ← the new field
-  errorMessage         String?
-  startedAt            DateTime   @default(now())
-  completedAt          DateTime?
-}
+? Are you sure you want to reset your database?
+  All data will be lost. › (y/N)
 ```
 
-You then run `npx prisma migrate reset` instead of `npx prisma migrate dev`.
+You type `y` without fully registering the warning.
 
-Your terminal shows:
+Your entire local database is wiped. Every bank account, transaction, budget, user, and category you had seeded for local development testing is gone. The database is recreated from scratch by replaying all migration files. The schema is correct now — but all your data is gone, and you never generated the new migration file for the field you added.
 
-```
-? Are you sure you want to reset your database? All data will be lost. › (y/N)
-```
+You stare at the terminal for a moment. Then you open Slack and message Tomasz directly:
 
-You type `y` without fully reading the warning.
+*"I think I made a mistake. I ran `migrate reset` instead of `migrate dev`. My local database got wiped. I don't think I generated the migration properly either. What should I do?"*
 
-Your local database is wiped. All your local test data — the bank accounts, transactions, and categories you had seeded for development — is gone. The database is recreated from scratch by replaying all migration files from the beginning.
+Tomasz replies within two minutes:
 
-You stare at the terminal for a moment. Then you Slack Tomasz: "I think I made a mistake. I ran `migrate reset` instead of `migrate dev`. My local database got wiped."
+*"Ah, classic first-time mistake. Don't worry — on local it just means your test data is gone. Nothing production-affecting. Here's what to do:*
+*1. Run `npx prisma migrate dev --name add_transactions_duplicate_to_sync_log` — this generates the migration properly*
+*2. Run `npm run db:seed` — this restores your local test data*
+*Send me the PR when it's done."*
 
-Tomasz responds within two minutes: "ah, classic first-time mistake. Don't worry — on local it just means your test data is gone. Your actual work is fine. Run `migrate dev` now to generate the migration properly, then re-seed your local data. I'll send you the seed command."
+You follow both steps. The migration is generated correctly:
 
-He walks you through:
-
-```bash
-# Step 1: Generate the migration properly
-npx prisma migrate dev --name add_transactions_duplicate_to_sync_log
-
-# Step 2: Re-seed your local database with test data
-npm run db:seed
+```sql
+-- prisma/migrations/20231120_add_transactions_duplicate_to_sync_log/migration.sql
+ALTER TABLE "banking"."sync_logs"
+ADD COLUMN "transactionsDuplicate" INTEGER NOT NULL DEFAULT 0;
 ```
 
-You run both commands. Your local database is back. The migration file is generated correctly. You open the PR.
+Your local database is back. You open the PR.
 
-Tomasz reviews the PR and approves it. One comment: "going forward — `migrate dev` for local development, `migrate deploy` for staging and production, `migrate reset` only when your local DB is completely broken. Keep that list somewhere you can see it."
+Tomasz reviews and approves it. One comment: *"Going forward — `migrate dev` for local development, `migrate deploy` for staging and production, `migrate reset` only when your local DB is completely broken. Keep that list somewhere."*
 
-You write it in your personal Notion page under "Things I learned the hard way."
+You add all three to your "Things I Learned" Notion page. With a note beside `migrate reset`: *"Never run this if you are not 100% sure which database you are connected to."*
 
 ---
 
 **R — Result:**
 
-The PR merged with the correct migration file. No production impact — you were only on your local machine. Tomasz did not make you feel foolish about it. He framed it as a rite of passage.
+The PR merged with the correct migration file. No production impact — you were on your local machine the entire time. Tomasz did not make you feel stupid about it. He treated it as a rite of passage.
 
-What you took away:
+Three things you took from this:
 
-- Three migration commands, three different purposes, never confuse them again
-- When you make a mistake, say so immediately and clearly. "I think I made a mistake" is always better than trying to quietly fix it without telling anyone
-- Tomasz's calm response taught you something about team culture — mistakes on local are fine, mistakes in production are serious, but blaming people for either helps nobody
+First — the technical lesson: three migration commands, three very different purposes, never confuse them again.
+
+Second — the communication lesson: when you make a mistake, say so immediately and clearly. *"I think I made a mistake"* is always better than trying to quietly fix it without telling anyone. Tomasz knew exactly what had happened the moment you described it, and he had you back to a working state in ten minutes because you were direct.
+
+Third — the culture lesson: Tomasz's calm, practical response taught you something about how this team operates. Mistakes on local are fine. Mistakes in production are serious. But blaming people for either one helps nobody. The question is always: what do you do next?
 
 ---
 
 ## What Month 1 Taught You Overall
 
-By the end of October — your third month — you had:
+By the end of your first month, you had merged two PRs, made one mistake that cost you an hour of local setup, and received a code review that taught you more in one afternoon than days of reading.
 
-- Merged your first PR in a production codebase
-- Experienced your first real code review and internalized six concrete lessons from it
-- Made your first real mistake (the migration reset) and handled it correctly
-- Started building a personal "lessons learned" document that you would add to every month
+The most important shift was not technical. It was learning to receive feedback without flinching, and to ask for help without pretending you already knew the answer.
 
-The most important shift in Month 1 was not technical. It was learning how to receive feedback without flinching, and how to ask for help without pretending you already knew the answer.
+Lucas said something in your first 1:1 that you wrote down and kept:
 
-Lucas said something in your first 1:1 that stuck with you: "the engineers who grow fastest here are not the ones who make the fewest mistakes. They are the ones who make mistakes openly, fix them quickly, and never make the same one twice."
+*"The engineers who grow fastest here are not the ones who make the fewest mistakes. They are the ones who make mistakes openly, fix them quickly, and never make the same one twice."*
+
+You did not fully understand what that meant in week one. By week four, you understood it completely.
 
 ---

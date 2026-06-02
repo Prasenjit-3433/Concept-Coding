@@ -782,8 +782,8 @@ You to me:
 
     Now It has 3 stories and they're saved as a file named
     - Month 1.md
-    - Month 2.md (pending...)
-    - Month 3.md (Pending...)
+    - Month 2.md
+    - Month 3.md 
     
     Ready for Quarter 2: First real ownership — building, not just fixing.
 
@@ -794,8 +794,8 @@ You to me:
 
     Now It has 3 stories and they're saved as a file named
     - Month 4.md
-    - Month 5.md (pending...)
-    - Month 6.md (Pending...)
+    - Month 5.md 
+    - Month 6.md
     
     Ready for Quarter 3: Thinking beyond your own ticket.
 
@@ -807,9 +807,10 @@ You to me:
     Now It has 3 stories and they're saved as a file named
     - Month 7.md
     - Month 8.md 
-    - Month 6.md (Pending...)
+    - Month 9.md
 
     Ready for Quarter 4: From executor to contributor — earning your place.
+
 -------------------------------------------------------
 You to me:
     Okay, I'm done writing the Quarter 4: From executor to contributor — earning your place. It's saved as a folder
@@ -819,3 +820,5 @@ You to me:
     - Month 10.md
     - Month 11.md 
     - Month 12.md 
+
+So we're done writing Module 13: My role, responsibility & contribution!
