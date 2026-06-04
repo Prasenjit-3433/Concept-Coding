@@ -357,3 +357,25 @@ You to me:
 -------------------------------------------------------------------
 You to me:
     It's ready & saved as "Step 4: Scala Crash Course.md" inside "Workflow".
+
+-------------------------------------------------------------
+Me to You:
+    Okay, let's start working on Issues we picked. The issue is #1244.
+
+    So go ahead with Issue #1244!
+
+    I've some suggestions:
+    In STAR pattern,
+    Situation & Task - these steps have to little bit more descriptive & comprehensive because otherwise neither I would be able to understand what problem I'm supposed to solve nor would I be able to explain it properly to the interviewer during interviews.
+    If the interviewer starts grilling, I would be totally stuck.
+    In fact, it would be better if we could start the conversation this way -
+    how kafka does the thing, how automq trying to do the thing & the benifit of automq approach over kafka
+    because interview would not know AutoMQ, so I've to explain him through kafka concepts always
+    
+    so write the whole Issue #1244
+
+-----------------------------------------------------------------
+You to me:
+    It's ready & saved as "Issue #1244.md" inside "Issues".
+
+    Ready to move to Issue #666? Say "next issue"!

@@ -562,5 +562,3 @@ You:
 ```
 
 ---
-
-Ready to move to **Issue #666**? Say **"next issue"**!
