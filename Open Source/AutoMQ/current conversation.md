@@ -190,3 +190,170 @@ Me to You:
     You've to always clean & clear...don't put buzzward!....it should be easy to understand, decision behind designs.
     
     Use detailed diagram to explain your thoughts, it helps a lot to understand!
+
+----------------------------------------------
+You to me:
+    I've read through both files. Here's where we stand:
+    You've identified 4 target issues to work on, in this order:
+    
+    #1244 — --broker param to kafka-producer-perf-test.sh ✅ Start here
+    #666 — JMX metrics observability ✅ Second
+    #835 — OTel SDK logs to server.log ✅ Third
+    #1842 — Metadata cleanup on topic deletion 🟡 Later
+
+    And before diving into the issues, you want to learn AutoMQ properly — built on top of your Kafka knowledge — in a 
+    smart, structured way. No buzzwords, clear diagrams, real reasoning behind design decisions.
+
+    So, ready to begin Step 1: AutoMQ Core Concepts & Architecture.
+    It's ready & saved as "Step 1: The Foundation.md" inside "AutoMQ Foundation"
+
+    Shall I write "Step 2: AutoMQ's Core Architectural Shift — Taking the Disk Out"
+
+----------------------------------------------
+You to me:
+    It's ready & saved as "Step 2: AutoMQ's Core Architectural Shift.md" inside "AutoMQ Foundation".
+
+    Shall I write "Step 3: AutoMQ's Internal Components — The Engine Room"?
+
+----------------------------------------------
+You to me:
+    It's ready & saved as "Step 3: AutoMQ's Internal Components.md" inside "AutoMQ Foundation".
+
+    Shall I write "Step 3: AutoMQ's Internal Components — The Engine Room"?
+
+----------------------------------------------
+You to me:
+    It's ready & saved as "Step 4: Navigating the AutoMQ Codebase.md" inside "AutoMQ Foundation".
+
+    What's Next
+    Step 5 is where we go fully hands-on with Issue #1244:
+    
+    Reading the existing ProducerPerformanceTest.java so you understand the test patterns
+    Writing the complete implementation together
+    Writing the tests
+    Understanding how to structure your first PR (commit message, PR description, what reviewers look for)
+    
+    This is where you go from "I understand the problem" to "I have working code ready to submit."
+
+--------------------------------------------------
+Me to you:
+    Wait a minute!
+    first tell me, by step 4, all our prerequisites or foundational knowledge needed to work on this repo is finished?
+    I'm asking because I want to deal with those 4 issues separately, as I've to mention it in my resume, so we're gonna do the contribution work as STAR format
+    it will help to understand it in structure way as well as help to explain to interviewer.
+    
+    so any prerequisites or foundational knowledge yet to covered, then finish them first
+    only then we're gonna touch those 4 issues!
+
+--------------------------------------------------
+You to me:
+    Great thinking — doing it in STAR format for your resume is smart, and finishing the foundation before touching any issue is the right call.
+    
+    Let me honestly assess where we are:
+    
+    ---
+    
+    ## What We've Covered (Steps 1–4)
+    
+    ```
+    Step 1 ✅ Kafka's physical reality & its 4 core problems
+    Step 2 ✅ AutoMQ's architectural shift (S3, stateless brokers)
+    Step 3 ✅ AutoMQ's internal components (Stream, ElasticLog, WAL, KV Store)
+    Step 4 ✅ Repo structure + Issue #1244 code walkthrough
+    ```
+    
+    ---
+    
+    ## What's Still Missing Before Touching Any Issue
+    
+    Honestly — **yes**, there are gaps. Let me be specific:
+    
+    ```
+    GAP 1: Git & Open Source Contribution Workflow
+    ────────────────────────────────────────────────
+    You've never contributed to open source before.
+    Before writing a single line, you need to know:
+    → Fork → clone → branch → commit → PR workflow
+    → How to write a good PR description
+    → How to respond to reviewer comments
+    → Commit message conventions (AutoMQ follows specific style)
+    
+    Without this, even perfect code won't get merged.
+    
+    GAP 2: How to READ an Existing Issue Properly
+    ───────────────────────────────────────────────
+    Each issue has context, linked PRs, maintainer comments.
+    You need a framework for:
+    → Confirming the issue is still open & unassigned
+    → Commenting "I'd like to work on this" FIRST
+    → Understanding what "done" looks like for reviewers
+    
+    GAP 3: Writing Tests (AutoMQ style)
+    ─────────────────────────────────────
+    AutoMQ PRs are rejected without proper tests.
+    You need to understand:
+    → How Kafka/AutoMQ tests are structured
+    → What test coverage is expected for each type of change
+    → How to mock KafkaProducer, Cluster metadata etc.
+    
+    GAP 4: Scala Basics (for Issue #1842 only)
+    ────────────────────────────────────────────
+    Issue #1842 is in ElasticLog.scala.
+    You know Java — but Scala syntax will slow you down.
+    A 30-minute crash course on Scala-for-Java-devs
+    is worth doing before touching that file.
+    ```
+    
+    ---
+    
+    ## My Recommendation — Remaining Steps
+    
+    ```
+    Step 5: Git + Open Source Workflow (non-negotiable)
+    Step 6: How to Approach an Issue (the process, not code)
+    Step 7: Test Writing Patterns in AutoMQ
+    Step 8: Scala crash course for Java devs (lightweight)
+    
+    THEN → Issue #1244 (hands-on, STAR format)
+    THEN → Issue #666
+    THEN → Issue #835
+    THEN → Issue #1842
+    ```
+    
+    ---
+    
+    So to directly answer your question: **no, prerequisites are not done yet.** Steps 5–8 are needed before you touch any issue.
+    
+    Shall I proceed with **Step 5: Git & Open Source Contribution Workflow**?
+
+----------------------------------------------------------------
+Me to you:
+    great!
+    we're gonna cover the remaining step soon but not as part of leaning foundation of AutoMQ
+    Rather learn it as "Workflow" i.e. how to work on a open source project / repo
+    hence you should reset the step no's
+    starts "Step 5: Git + Open Source Workflow" as "Step 1: Git + Open Source Workflow"
+    
+    now start "Step 1: Git + Open Source Workflow"
+
+--------------------------------------------------------------
+You to me:
+    It's ready & saved as "Step 1: Git + Open Source Workflow.md" inside "Workflow".
+    
+    Shall I write Step 2: How to Approach an Issue?
+
+--------------------------------------------------------------
+You to me:
+    It's ready & saved as "Step 2: How to Approach an Issue.md" inside "Workflow".
+
+    Shall I write Step 3: Writing Tests in AutoMQ/Kafka Style?
+
+--------------------------------------------------------------
+You to me:
+    It's ready & saved as "Step 3: Writing Tests in AutoMQ Style.md" inside "Workflow".
+
+    Shall I write Step 4: Scala Crash Course for Java Developers?
+
+-------------------------------------------------------------------
+You to me:
+    It's ready & saved as "Step 4: Scala Crash Course.md" inside "Workflow".
