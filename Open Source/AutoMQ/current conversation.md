@@ -379,3 +379,19 @@ You to me:
     It's ready & saved as "Issue #1244.md" inside "Issues".
 
     Ready to move to Issue #666? Say "next issue"!
+
+-----------------------------------------------------------------
+You to me:
+    It's ready & saved as "Issue #666.md" inside "Issues".
+
+    Ready to move to Issue #835? Say "next issue"!
+
+-----------------------------------------------------------------
+You to me:
+    It's ready & saved as "Issue #835.md" inside "Issues".
+
+    Ready to move to Issue #1842? Say "next issue"!
+
+-----------------------------------------------------------------
+You to me:
+    It's ready & saved as "Issue #1842.md" inside "Issues".
