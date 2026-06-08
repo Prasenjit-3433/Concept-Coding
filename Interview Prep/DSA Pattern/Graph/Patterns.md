@@ -137,6 +137,9 @@ Then Few additional Patterns are there, like
 # Travelling Salesman Problem
 
 # Eulerian Circuit
+    - Leetcode 332. Reconstruct Itinerary
+    - Leetcode 753. Cracking the Safe
+    - Leetcode 2097. Valid Arrangement of Pairs
 
 # Strongly Connected Component
     - Theory: Tarjan's Algorithm
