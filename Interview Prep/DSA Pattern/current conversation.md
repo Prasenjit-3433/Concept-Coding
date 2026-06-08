@@ -25,3 +25,12 @@ Me to you:
           in interview.
 
     Okay, then let's start working!
+
+--------------------------------
+You to me:
+    Hey! I can see the documents you've shared — the Patterns.md file with your graph DSA pattern list, and the current conversation.md file explaining your goal.
+    Let me do a thorough analysis of everything: missing patterns, missing problems, redundancies, and then give you a fully reorganized, interview-optimized version.
+
+    I updated the content of "Graph Prob Patterns.md" with all improvements, have a look!
+
+--------------------------------
