@@ -116,3 +116,25 @@ You to Me:
 
     Digit DP and Probability DP were completely absent from Fraz's sheet. These come up at Google, Meta, and Jane Street
     level interviews. Adding them is not padding — it's filling a real gap.
+
+----------------------------------------------
+Me to You:
+    Again, Great job you've done on DP.
+    This is our work is on Binary Tree & Binary Search Tree / ordered set. Both 2 sheet categorized these 2 topics 
+    separately as individual topics.
+    As a result, it's likely possible that one guy placed the same prob in "Binary Tree", whereas the other guy might
+    have put it in "Binary Search Tree / ordered set".
+    
+    And as earlier said, we've to be very careful here about merging these sheets as they might have different pattern 
+    naming convension, same problem might apear in different pattern category in those two different sheet. There would 
+    definitely some conflicts!
+    Therefore, we have analyze the very carefully to come with an uniform pattern list.
+    So my suggestion would be to go through all patterns, problems of Binary Tree in "Binary Tree problem aggregation.md" 
+    file & Binary Search Tree / ordered set in "BST problem aggregation.md" file, do the same quality of analysis work
+    as you did previously on graph, DP, then provide final list for both of those 2 topic one by one.
+
+    Don't try to do it in one single response - one response for complete Binary Tree and let me check, then when I
+    would ask you to go for Binary Search Tree / ordered set, then another response Binary Search Tree / ordered set.
+
+    So that you don't make any mistake while segregation & categorization!.. don't hurry, keep calm, don't make any
+    mistake!
