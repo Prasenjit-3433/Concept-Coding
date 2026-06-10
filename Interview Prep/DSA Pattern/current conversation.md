@@ -138,3 +138,15 @@ Me to You:
 
     So that you don't make any mistake while segregation & categorization!.. don't hurry, keep calm, don't make any
     mistake!
+
+----------------------------------------------------
+You to me:
+
+    Binary tree's all prob patterns are ready and saved as "Binary Tree Prob Pattern.md"
+    now let's start working on BST or ordered set.
+    
+------------------------------------------------------------
+You to me:
+
+    Binary Search tree or ordered set's all prob patterns are ready and saved as "BST Prob Pattern.md"
+    Now have a look at both of them carefully.
