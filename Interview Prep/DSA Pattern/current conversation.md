@@ -150,3 +150,12 @@ You to me:
 
     Binary Search tree or ordered set's all prob patterns are ready and saved as "BST Prob Pattern.md"
     Now have a look at both of them carefully.
+
+------------------------------------------------------------
+Me to you:
+    Okay, we finished Graph, DP, Binary Tree, BST or Ordered Set.
+    Now it's the time to start working on Recursion & Backtracking problem patterns. As usual, I collected all problems
+    from FRAZ & Algomaster.io, which is available on "Recursion & Backtracking prob aggregation.md" file.
+
+    So go ahead and start working as did during Graph, DP, Binary Tree, BST or Ordered Set.
+    
