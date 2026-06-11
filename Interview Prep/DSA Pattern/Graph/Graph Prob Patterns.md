@@ -1,16 +1,10 @@
-The ordering logic for each pattern:
-- Start with pure template problem
-- Then single concept variations
-- Then harder state expansions
-- End with multi-concept combos
-
-Everything else looks correctly ordered. Now writing the final sheet:
+Here is the updated Graph sheet with all four changes applied:
 
 ---
 
 # Graph DSA Patterns
 
-"Problems are infinite, but patterns are finite!"
+*"Problems are infinite, but patterns are finite!"*
 
 ---
 
@@ -42,7 +36,7 @@ Everything else looks correctly ordered. Now writing the final sheet:
 
 ### Pattern 1: Graph Traversal (DFS/BFS on Explicit Graphs)
 
-Identify: Graph given as adjacency list/matrix, no grid, no shortest path — just traverse and collect info.
+**Identify:** Graph given as adjacency list/matrix, no grid, no shortest path — just traverse and collect info.
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -52,13 +46,14 @@ Identify: Graph given as adjacency list/matrix, no grid, no shortest path — ju
 | 4 | LC 690. Employee Importance | DFS/BFS on implicit tree graph |
 | 5 | LC 1376. Time Needed to Inform All Employees | DFS on tree, propagate timing downward |
 | 6 | LC 1466. Reorder Routes to Make All Paths Lead to City Zero | DFS with edge direction awareness |
-| 7 | LC 863. All Nodes Distance K in Binary Tree | DFS to build undirected graph + BFS for distance |
+| 7 | LC 2246. Longest Path With Different Adjacent Characters | DFS on general rooted tree with neighbor value constraint |
+| 8 | LC 863. All Nodes Distance K in Binary Tree | DFS to build undirected graph + BFS for distance |
 
 ---
 
 ### Pattern 2: Grid DFS / Flood Fill
 
-Identify: 2D matrix, explore connected cells, count or mark regions.
+**Identify:** 2D matrix, explore connected cells, count or mark regions.
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -68,20 +63,19 @@ Identify: 2D matrix, explore connected cells, count or mark regions.
 | 4 | LC 1254. Number of Closed Islands | Boundary DFS — island must not touch border |
 | 5 | LC 1020. Number of Enclaves | Boundary DFS, count enclosed cells |
 | 6 | LC 417. Pacific Atlantic Water Flow | Reverse multi-source DFS from both boundaries |
-| 7 | LC 1islands. Count Sub Islands | DFS — check if island is subset of another grid |
+| 7 | LC 1островов. Count Sub Islands | DFS — check if island is subset of another grid |
 | 8 | LC 1992. Find All Groups of Farmland | DFS to detect rectangular land regions |
 | 9 | LC 79. Word Search | DFS + backtracking on grid |
 | 10 | GFG: Number of Distinct Islands | DFS + shape encoding/hashing |
-| 11 | LC 827. Making A Large Island | DFS component ID + DSU merge |
-| 12 | LC 2246. Longest Path With Different Adjacent Characters | DFS on tree with neighbor value constraint |
+| 11 | LC 827. Making A Large Island | DFS component ID + merge via DSU |
 
 ---
 
 ### Pattern 3: BFS — Single Source
 
-Identify: Unweighted graph or grid, find shortest path or minimum steps from one source.
+**Identify:** Unweighted graph or grid, find shortest path or minimum steps from one source.
 
-Note on Bidirectional BFS: Not a separate pattern — it is an optimization on regular BFS. Search from both source and destination simultaneously. Reduces time from O(b^d) to O(b^(d/2)). LC 127 is the canonical problem to learn this optimization.
+**Note on Bidirectional BFS:** Not a separate pattern — it is an optimization on regular BFS. Search from both source and destination simultaneously. Reduces time from O(b^d) to O(b^(d/2)). LC 127 is the canonical problem to learn this optimization.
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -102,7 +96,7 @@ Note on Bidirectional BFS: Not a separate pattern — it is an optimization on r
 
 ### Pattern 4: Multi-Source BFS
 
-Identify: Multiple starting points — seed ALL sources into queue at level 0 simultaneously.
+**Identify:** Multiple starting points — seed ALL sources into queue at level 0 simultaneously.
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -119,7 +113,9 @@ Identify: Multiple starting points — seed ALL sources into queue at level 0 si
 
 ### Pattern 5: Cycle Detection
 
-Identify: Check if a cycle exists. Directed — 3-color DFS or Kahn's. Undirected — parent tracking or DSU.
+**Identify:** Check if a cycle exists. Directed — 3-color DFS or Kahn's. Undirected — parent tracking or DSU.
+
+**On Bipartite / Graph Coloring:** Checking bipartiteness is equivalent to detecting an odd-length cycle. LC 785 and LC 886 both reduce to this — 2-color the graph; if you ever need to assign a node the same color as its neighbor, the graph is not bipartite. This is why bipartite problems live here and not in a separate pattern.
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -128,14 +124,15 @@ Identify: Check if a cycle exists. Directed — 3-color DFS or Kahn's. Undirecte
 | 3 | Theory | Cycle Detection Directed — DFS 3-color (WHITE/GRAY/BLACK) |
 | 4 | Theory | Cycle Detection Directed — Kahn's BFS |
 | 5 | LC 785. Is Graph Bipartite? | Odd-length cycle detection → not bipartite |
-| 6 | LC 1559. Detect Cycles in 2D Grid | Cycle detection on grid graph |
-| 7 | LC 2608. Shortest Cycle in a Graph | BFS-based shortest cycle length |
+| 6 | LC 886. Possible Bipartition | Same 2-coloring technique on an implicit conflict graph |
+| 7 | LC 1559. Detect Cycles in 2D Grid | Cycle detection on grid graph |
+| 8 | LC 2608. Shortest Cycle in a Graph | BFS-based shortest cycle length |
 
 ---
 
 ### Pattern 6: Topological Sort
 
-Identify: DAG with dependencies — ordering where all prerequisites come before dependents.
+**Identify:** DAG with dependencies — ordering where all prerequisites come before dependents.
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -154,13 +151,13 @@ Identify: DAG with dependencies — ordering where all prerequisites come before
 
 ### Pattern 7: 0/1 BFS
 
-Identify: Shortest path where edge/move costs are strictly 0 or 1 — use Deque not Queue. O(V+E) vs Dijkstra's O(E log V).
+**Identify:** Shortest path where edge/move costs are strictly 0 or 1 — use Deque not Queue. O(V+E) vs Dijkstra's O(E log V).
 
 | # | Problem | Key Concept |
 |---|---|---|
 | 1 | LC 2290. Minimum Obstacle Removal to Reach Corner | 0/1 BFS on grid — pure template |
 | 2 | LC 1368. Minimum Cost to Make at Least One Valid Path in Grid | 0/1 BFS with directional move cost |
-| 3 | LC 1293. Shortest Path in Grid with Obstacles Elimination | BFS with state = (row, col, remaining k) |
+| 3 | LC 1293. Shortest Path in Grid with Obstacles Elimination | BFS with state = (row, col, remaining k); obstacle costs 1, free cell costs 0 |
 
 ---
 
@@ -170,9 +167,9 @@ Identify: Shortest path where edge/move costs are strictly 0 or 1 — use Deque 
 
 ### Pattern 8: Dijkstra's Algorithm
 
-Identify: Weighted graph, non-negative edges, minimum cost/time/effort from a source.
+**Identify:** Weighted graph, non-negative edges, minimum cost/time/effort from a source.
 
-Note on K Shortest Paths: Not a separate pattern. The interview-relevant flavors are state expansion — track (node + extra state) in the heap. LC 787, LC 1976, LC 2045, LC 2714 all teach different variations of this.
+**Note on K Shortest Paths:** Not a separate pattern. The interview-relevant flavors are state expansion — track (node + extra state) in the heap. LC 787, LC 1976, LC 2045, LC 2714 all teach different variations of this.
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -194,9 +191,9 @@ Note on K Shortest Paths: Not a separate pattern. The interview-relevant flavors
 
 ### Pattern 9: Bellman-Ford Algorithm
 
-Identify: K-step constraint, negative weights, or maximize with positive cycle detection.
+**Identify:** K-step constraint, negative weights, or maximize with positive cycle detection.
 
-Note: Solve LC 743 and LC 787 with both Dijkstra AND Bellman-Ford to deeply understand the tradeoff.
+**Note:** Solve LC 743 and LC 787 with both Dijkstra AND Bellman-Ford to deeply understand the tradeoff.
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -209,7 +206,7 @@ Note: Solve LC 743 and LC 787 with both Dijkstra AND Bellman-Ford to deeply unde
 
 ### Pattern 10: Floyd-Warshall Algorithm
 
-Identify: Shortest path between ALL pairs, N ≤ 200, or transitive closure needed.
+**Identify:** Shortest path between ALL pairs, N ≤ 200, or transitive closure needed.
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -227,7 +224,7 @@ Identify: Shortest path between ALL pairs, N ≤ 200, or transitive closure need
 
 ### Pattern 11: Disjoint Set Union (DSU)
 
-Identify: Dynamically merging components, checking if two nodes belong to same component.
+**Identify:** Dynamically merging components, checking if two nodes belong to same component.
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -240,16 +237,17 @@ Identify: Dynamically merging components, checking if two nodes belong to same c
 | 7 | LC 924. Minimize Malware Spread | DSU + component size analysis |
 | 8 | LC 399. Evaluate Division | Weighted DSU |
 | 9 | LC 827. Making A Large Island | DSU + Grid DFS merge |
-| 10 | LC 1562. Find Latest Group of Size M | DSU with component size tracking over time |
-| 11 | LC 1697. Checking Existence of Edge Length Limited Paths | Offline DSU — sort queries + edges by weight together |
-| 12 | LC 1998. GCD Sort of an Array | DSU + Sieve — union numbers sharing a prime factor |
-| 13 | LC 1584. Min Cost to Connect All Points | DSU + MST bridge to next pattern |
+| 10 | LC 2685. Count the Number of Complete Components | DSU + component degree check |
+| 11 | LC 1562. Find Latest Group of Size M | DSU with component size tracking over time |
+| 12 | LC 1697. Checking Existence of Edge Length Limited Paths | Offline DSU — sort queries + edges by weight together |
+| 13 | LC 1998. GCD Sort of an Array | DSU + Sieve — union numbers sharing a prime factor |
+| 14 | LC 1584. Min Cost to Connect All Points | DSU + MST bridge to next pattern |
 
 ---
 
 ### Pattern 12: Minimum Spanning Tree (MST)
 
-Identify: Connect all nodes with minimum total edge weight.
+**Identify:** Connect all nodes with minimum total edge weight.
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -262,7 +260,7 @@ Identify: Connect all nodes with minimum total edge weight.
 
 ### Pattern 13: Bridges & Articulation Points
 
-Identify: Which single edge or node removal disconnects the graph. Uses Tarjan's with disc[] and low[].
+**Identify:** Which single edge or node removal disconnects the graph. Uses Tarjan's with disc[] and low[].
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -270,26 +268,25 @@ Identify: Which single edge or node removal disconnects the graph. Uses Tarjan's
 | 2 | Theory | Tarjan's Algorithm for Articulation Points |
 | 3 | LC 1192. Critical Connections in a Network | Bridges via Tarjan's DFS |
 | 4 | GFG: Articulation Point in Graph | Articulation points via Tarjan's |
-| 5 | LC 2685. Count the Number of Complete Components | DSU + component completeness check |
+| 5 | LC 1568. Minimum Number of Days to Disconnect Island | Articulation point on grid — check if island already disconnected, else try removing one cell |
 
 ---
 
 ### Pattern 14: Strongly Connected Components (SCC)
 
-Identify: Directed graph — find groups where every node can reach every other node in the group.
+**Identify:** Directed graph — find groups where every node can reach every other node in the group.
 
 | # | Problem | Key Concept |
 |---|---|---|
 | 1 | Theory | Kosaraju's Algorithm — 2 DFS passes |
 | 2 | Theory | Tarjan's Algorithm for SCC — 1 DFS pass |
-| 3 | LC 802. Find Eventual Safe States | Nodes not part of any cycle |
-| 4 | LC 2360. Longest Cycle in a Graph | DFS cycle detection in directed graph |
+| 3 | LC 2360. Longest Cycle in a Graph | DFS cycle detection in directed graph |
 
 ---
 
 ### Pattern 15: Eulerian Path / Circuit
 
-Identify: Visit every edge exactly once.
+**Identify:** Visit every edge exactly once.
 
 | # | Problem | Key Concept |
 |---|---|---|
@@ -316,9 +313,10 @@ Do these only after both constituent patterns are fully solid.
 
 | Phase | Patterns | Problems |
 |---|---|---|
-| Phase 1 — Foundation | Graph Traversal, Grid DFS, BFS Single, Multi-source BFS | 35 |
-| Phase 2 — Core Algorithms | Cycle Detection, Topo Sort, 0/1 BFS | 20 |
+| Phase 1 — Foundation | Graph Traversal, Grid DFS, BFS Single, Multi-source BFS | 36 |
+| Phase 2 — Core Algorithms | Cycle Detection, Topo Sort, 0/1 BFS | 22 |
 | Phase 3 — Weighted Shortest Path | Dijkstra, Bellman-Ford, Floyd-Warshall | 22 |
-| Phase 4 — Advanced Structures | DSU, MST, Bridges, SCC, Eulerian | 26 |
+| Phase 4 — Advanced Structures | DSU, MST, Bridges, SCC, Eulerian | 27 |
 | Phase 5 — Hard Combinations | Mixed | 4 |
-| **Total** | **15 Patterns** | **~107 problems** |
+| **Total** | **15 Patterns** | **~111 problems** |
+
