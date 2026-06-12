@@ -161,8 +161,29 @@ Me to you:
 
 ------------------------------------------------------------
 You to me:
+
+    Recursion & Backtracking's all prob patterns are ready and saved as "Recursion & Backtracking Prob Pattern.md"
+    Now have a look at both of them carefully.
+
+------------------------------------------------------------
+Me to you:
     Okay, you did great job around Recursion & Backtracking pattern.
     Now it's the time to start working on Binary Search problem patterns. As usual, I collected all problems
     from FRAZ & Algomaster.io, which is available on "Binary Search prob aggregation.md" file.
 
     So go ahead and start working as did during Graph, DP, Binary Tree, BST or Ordered Set, Recursion & Backtracking.
+
+------------------------------------------------------------
+You to me:
+
+    Binary Search's all prob patterns are ready and saved as "Binary Search Prob Pattern.md"
+    Now have a look at both of them carefully.
+
+------------------------------------------------------------
+Me to you:
+    Okay, you did great job around Binary Search as well.
+    Now it's the time to start working on Linked List problem patterns. As usual, I collected all problems
+    from FRAZ & Algomaster.io, which is available on "LinkedList prob aggregation.md" file.
+
+    So go ahead and start working as did deep analysis during Graph, DP, Binary Tree, BST or Ordered Set, Recursion & Backtracking, 
+    Binary search.
