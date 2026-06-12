@@ -187,3 +187,18 @@ Me to you:
 
     So go ahead and start working as did deep analysis during Graph, DP, Binary Tree, BST or Ordered Set, Recursion & Backtracking, 
     Binary search.
+
+------------------------------------------------------------
+You to me:
+
+    Linked List's all prob patterns are ready and saved as "LinkedList Prob Pattern.md"
+    Now have a look at both of them carefully.
+
+------------------------------------------------------------
+Me to you:
+    Okay, you did great job around Binary Search as well.
+    Now it's the time to start working on Stack problem patterns. As usual, I collected all problems
+    from FRAZ & Algomaster.io, which is available on "Stack prob aggregation.md" file.
+
+    So go ahead and start working as did deep analysis during Graph, DP, Binary Tree, BST or Ordered Set, Recursion & Backtracking, 
+    Binary search, Linked List.
