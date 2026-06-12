@@ -162,3 +162,7 @@ Me to you:
 ------------------------------------------------------------
 You to me:
     Okay, you did great job around Recursion & Backtracking pattern.
+    Now it's the time to start working on Binary Search problem patterns. As usual, I collected all problems
+    from FRAZ & Algomaster.io, which is available on "Binary Search prob aggregation.md" file.
+
+    So go ahead and start working as did during Graph, DP, Binary Tree, BST or Ordered Set, Recursion & Backtracking.
