@@ -201,4 +201,120 @@ Me to you:
     from FRAZ & Algomaster.io, which is available on "Stack prob aggregation.md" file.
 
     So go ahead and start working as did deep analysis during Graph, DP, Binary Tree, BST or Ordered Set, Recursion & Backtracking, 
-    Binary search, Linked List.
+    Binary search, Linked List
+
+------------------------------------------------------------
+You to me:
+    I've gone through all the files carefully, including `current conversation.md` which gives me the full picture of our work so far.
+    
+    Here's my understanding of where we are:
+    
+    **Completed topics:**
+      - Graph
+      - DP
+      - Binary Tree
+      - BST / Ordered Set
+      - Recursion & Backtracking
+      - Binary Search
+      - Linked List
+    
+    **Current task:** Stack — the `Stack prob aggregation.md` has problems collected from both Fraz and Algomaster, and `Stack Prob Pattern.md` is currently **empty**. My job is to build it from scratch with the same rigor.
+    
+    Let me do the full analysis now.
+    
+    ---
+    
+    ## Step 1: Pattern Inventory from Both Sheets
+    
+    **Fraz's patterns:**
+      - Parenthesis / Advance Stack Problems
+      - Monotonic Stack
+    
+    **Algomaster's patterns:**
+      - Standard Stack Problems
+      - Monotonic Stack
+    
+    ---
+    
+    ## Step 2: Problem Analysis & Conflict Resolution
+
+    Both sheets agree on the two broad categories. But "Parenthesis / Advance Stack Problems" and "Standard Stack Problems" are essentially the same bucket with different names — Algomaster's version is more comprehensive. The real question is whether **two patterns are enough**, or whether the problem set reveals more distinct sub-patterns hiding inside "Standard Stack."
+    
+    Let me analyze the full problem list:
+    
+    **Standard/Advanced Stack problems across both sheets:**
+      - Valid Parentheses, Longest Valid Parentheses, Minimum Remove to Make Valid, Valid Parenthesis String → all parenthesis matching
+      - Min Stack, Maximum Frequency Stack → augmented/design stack
+      - Basic Calculator I & II → expression evaluation
+      - Evaluate Reverse Polish Notation → postfix evaluation
+      - Decode String → nested bracket recursion via stack
+      - Asteroid Collision, Remove All Adjacent Duplicates, Remove Duplicate Letters, Remove K Digits, Removing Stars → "simulation/reduction" problems — process element, decide push or pop/modify
+      - Simplify Path → stack on string tokens
+      - Baseball Game, Exclusive Time of Functions → simulation
+      - Car Fleet, Validate Stack Sequences → structural reasoning
+      - Insert Interval → this is **not a stack problem** — it's an interval problem; Fraz placed it incorrectly
+    
+    **Monotonic Stack problems:**
+      - Next Greater Element I & II, Daily Temperatures, Online Stock Span, Buildings with Ocean View → classic NGE
+      - Sum of Subarray Minimums, Sum of Subarray Ranges → contribution counting
+      - Trapping Rain Water, Largest Rectangle in Histogram → histogram/area problems
+      - 132 Pattern, Maximum Width Ramp, Shortest Unsorted Continuous Subarray → order-violation problems
+      - Remove K Digits, Create Maximum Number → greedy lexicographic
+      - Beautiful Towers II → prefix/suffix max via monotonic stack
+      - Max Chunks to Make Sorted, Number of Visible People → structural reasoning
+    
+    ---
+    
+    ## Step 3: Missing Patterns & Problems
+    
+    **Missing problems worth adding:**
+      - LC 84 Largest Rectangle in Histogram is listed — but LC 85 Maximal Rectangle (which directly builds on it using stack row by row) is missing. Essential pair.
+      - LC 907 Sum of Subarray Minimums is listed — LC 2104 Sum of Subarray Ranges is also listed in Algomaster — good, both are there.
+      - LC 496 Next Greater Element I is listed — LC 503 Next Greater Element II is also listed — good.
+      - LC 1944 Number of Visible People in a Queue — listed in Algomaster, worth keeping; frequently asked at Google.
+      - LC 735 Asteroid Collision — listed in both, keep.
+      - **Missing:** LC 316 Remove Duplicate Letters is listed — but the pattern note connecting it to LC 402 Remove K Digits (both are "build lexicographically smallest/largest result via monotonic stack greedy") needs to be explicit. Both are there but their connection should be flagged.
+      - **Missing:** LC 901 Online Stock Span — listed in Algomaster, not in Fraz. Keep it.
+    
+    **Insert Interval (LC 57)** — this is in Fraz's "Parenthesis / Advance Stack" section but has zero relation to stacks. It's a pure interval problem. **Drop it entirely from this sheet.**
+    
+    ---
+    
+    ## Step 4: Final Pattern Structure
+    
+    After analysis, the problems naturally cluster into **4 distinct patterns**, not 2:
+    
+       1. **Parenthesis & Bracket Problems** — matching, validity, minimum removals; the stack models nesting depth
+       2. **Stack Simulation & Design** — expression evaluation, calculators, augmented stacks (Min Stack, Freq Stack); the stack models a process or state machine
+       3. **Monotonic Stack — Next Greater/Smaller** — NGE, temperatures, stock span, buildings; the stack maintains a monotone invariant
+       4. **Monotonic Stack — Area, Sum & Advanced** — histograms, subarray min/max sums, contribution counting, lexicographic greedy; harder applications of the same invariant
+    
+    Splitting monotonic stack into two tiers matters for learning order — NGE problems are the entry point and must be solid before attempting histogram area or contribution counting problems.
+    
+    ---
+
+    Now here is the complete final sheet and saved as "Stack Prob Pattern.md" inside stack folder.
+
+    This is the complete Stack pattern sheet. The key structural decisions to flag:
+
+    Why four patterns instead of two? Fraz and Algomaster both used two buckets (Standard + Monotonic), but that hides a 
+    critical learning dependency. The NGE template and the area/contribution/greedy applications require different mental
+    models at the pop step — conflating them causes learners to memorize LC 84 without understanding why it works. 
+    Separating them makes the progression explicit.
+
+    Why split Monotonic Stack at all if the mechanism is the same? Because the trigger recognition differs. "Next greater
+    element" is immediately obvious as a monotonic stack problem. "Sum of subarray minimums" is not — you need the 
+    contribution counting insight first. Grouping them by difficulty of recognition, not just mechanism, is what makes 
+    this sheet useful for unseen problems.
+
+    LC 57 removal from Fraz's stack section. This was a clear misclassification. Keeping it here would pollute the pattern
+    with noise and weaken your ability to identify what actually belongs here.
+
+------------------------------------------------------------
+Me to you:
+    Okay, you did great job around Binary Search as well.
+    Now it's the time to start working on Queue problem patterns. As usual, I collected all problems
+    from FRAZ & Algomaster.io, which is available on "Queue prob aggregation.md" file.
+
+    So go ahead and start working as did deep analysis during Graph, DP, Binary Tree, BST or Ordered Set, Recursion & Backtracking, 
+    Binary search, Linked List, Stack.
