@@ -318,3 +318,122 @@ Me to you:
 
     So go ahead and start working as did deep analysis during Graph, DP, Binary Tree, BST or Ordered Set, Recursion & Backtracking, 
     Binary search, Linked List, Stack.
+------------------------------------------------------------
+You to me:
+    I've gone through all the files carefully, including `current conversation.md` which gives me the full picture of our work so far.
+    
+    **Completed topics:**
+      - Graph
+      - DP
+      - Binary Tree
+      - BST / Ordered Set
+      - Recursion & Backtracking
+      - Binary Search
+      - Linked List
+      - Stack
+    
+    **Current task:** Queue — the `Queue prob aggregation.md` has problems collected from both Fraz and Algomaster, and `Queue Prob Pattern.md` is currently **empty**. My job is to build it from scratch with the same rigor.
+    
+    Let me do the full analysis now.
+    
+    ---
+    
+    ## Step 1: Pattern Inventory from Both Sheets
+    
+    **Fraz's patterns:**
+      - Implementation Problems
+      - Singly-Ended Queue
+      - Doubly-Ended Queue
+    
+    **Algomaster's patterns:**
+      - Standard Queue Problems
+      - Monotonic Queue
+    
+    ---
+    
+    ## Step 2: Problem Analysis & Conflict Resolution
+    
+    Fraz's "Singly-Ended Queue" and Algomaster's "Standard Queue Problems" are essentially the same bucket. Fraz's "Doubly-Ended Queue" and Algomaster's "Monotonic Queue" overlap but are not identical — a deque is the data structure, a monotonic queue is the *technique*. These need to be cleanly separated.
+    
+    Let me analyze every problem:
+    
+    **Implementation / Design problems (Fraz):**
+      - Implement Stack Using Queues, Implement Queue Using Stacks, Queue Using Two Stacks → classic CS fundamentals, interview warm-ups
+      - Design Circular Queue, N-Queue Using Array → implementation-level design
+      - Design Circular Deque → deque design
+    
+    **Standard Queue problems (Fraz + Algomaster):**
+      - Find the Winner of the Circular Game (LC 1823) → simulate Josephus problem with queue
+      - Reveal Cards in Increasing Order (LC 950) → simulate queue-based card dealing
+      - Number of Recent Calls (LC 933) → sliding window via queue
+      - Time Needed to Buy Tickets (LC 2073) → circular queue simulation
+      - Moving Average from Data Stream (LC 346) → fixed-size window sum via queue
+      - First Unique Number (LC 3656) → queue + set for ordering
+      - Number of People Aware of a Secret (LC 2327) → BFS-like spreading via queue
+      - Stamping the Sequence (LC 936) → hard simulation problem, reverse stamping via queue
+    
+    **Monotonic Queue / Deque problems:**
+      - Sliding Window Maximum (LC 239) → the canonical monotonic deque template
+      - Continuous Subarrays (LC 2762) → sliding window with monotonic deque for range tracking
+      - Jump Game VI (LC 1696) → sliding window DP with deque (already in DP sheet)
+      - Find the Most Competitive Subsequence (LC 1673) → monotonic deque greedy
+      - Partition Array Such That Maximum Difference is K (LC 2294) → sliding window
+      - Longest Continuous Subarray with Abs Diff ≤ Limit (LC 1438) → two deques (max + min)
+      - Max Value of Equation (LC 1499) → deque on linear recurrence
+      - Constrained Subsequence Sum (LC 1425) → sliding window DP with deque (already in DP sheet)
+      - Shortest Subarray with Sum at Least K (LC 862) → prefix sum + monotonic deque
+    
+    ---
+    
+    ## Step 3: Conflict Resolution & Classification
+    
+    **Key conflict:** Fraz puts "Sliding Window Maximum" under Doubly-Ended Queue (data structure focus). Algomaster puts it under Monotonic Queue (technique focus). The technique label is more useful for pattern recognition — **Monotonic Queue wins**.
+    
+    **Cross-sheet duplicates with DP sheet:**
+      - LC 1696 Jump Game VI — already in DP sheet (Sliding Window DP). Keep a reference here but don't list as primary.
+      - LC 1425 Constrained Subsequence Sum — same situation.
+    
+    These two problems sit at the intersection of DP and Queue patterns. Primary home is DP sheet. A cross-reference note in the Queue sheet is the right call — same as how LC 394 Decode String appears in both Stack and Recursion sheets with a note.
+    
+    **Stamping the Sequence (LC 936):** This is genuinely hard and somewhat isolated in technique — reverse simulation with a queue. It's rare in interviews and the technique doesn't generalize broadly. Flag it as optional/hard at the end of the Standard Queue section.
+    
+    ---
+    
+    ## Step 4: Missing Problems Worth Adding
+    
+      - **LC 862. Shortest Subarray with Sum at Least K** — listed in Algomaster's monotonic queue section. This is one of the most important deque problems — prefix sum + monotonic deque to find shortest subarray. Must keep.
+      - **LC 239. Sliding Window Maximum** — listed in both sheets. This is the canonical template for all monotonic deque problems. Non-negotiable anchor problem.
+      - **LC 1438. Longest Continuous Subarray with Abs Diff ≤ Limit** — two deques simultaneously (one for max, one for min). Strong interview problem, keep.
+      - **Missing from both sheets:** LC 59 Spiral Matrix II / LC 54 Spiral Matrix — sometimes appears in queue-based BFS simulations, but these belong in Array, not Queue. Don't add.
+      - **Missing:** The Josephus problem (LC 1823 Find Winner of Circular Game) appears in Fraz. Keep — it's a clean queue simulation problem asked at Amazon/Google.
+        
+      ---
+    
+      ## Step 5: Final Pattern Structure
+    
+      After analysis, four patterns emerge naturally:
+    
+         1. **Queue Implementation & Design** — the data structure mechanics; needed before anything else
+         2. **Standard Queue Simulation** — problems where a queue models a process: circular games, card dealing, ticket buying, secret spreading
+         3. **Monotonic Deque — Sliding Window** — the canonical technique: maintain a deque of useful candidates across a window
+         4. **Monotonic Deque — Advanced Applications** — harder problems: prefix sum + deque, DP + deque, two simultaneous deques
+
+     ---
+
+     Here is the complete final sheet and saved as Queue Prob Pattern.md inside Queue folder.
+
+    ---
+
+    The Queue sheet is now complete. A few key structural decisions to flag:
+
+    **Why split Monotonic Queue into two tiers?** Fraz and Algomaster both treated it as one bucket. But LC 239 and LC 862
+    require fundamentally different entry points — one is pure sliding window, the other requires you to first recognize 
+    a prefix sum or DP structure. Conflating them causes learners to memorize LC 862 without understanding why the deque is there.
+
+    **Why keep LC 1696 and LC 1425 as cross-references rather than full entries?** Because their primary lesson is the DP 
+    recurrence, not the deque. Adding them as full entries here would duplicate work from the DP sheet and dilute the Queue
+    pattern's identity. The cross-reference preserves the connection without redundancy.
+
+    **Stamping the Sequence (LC 936) flagged as optional.** The reverse simulation technique is clever but does not generalize
+    to a broader family of problems. Including it as a full entry would give it misleading weight. Flagging it as hard/optional 
+    is honest about its interview frequency and pattern transferability.
