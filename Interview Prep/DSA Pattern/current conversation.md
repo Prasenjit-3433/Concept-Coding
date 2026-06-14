@@ -437,3 +437,14 @@ You to me:
     **Stamping the Sequence (LC 936) flagged as optional.** The reverse simulation technique is clever but does not generalize
     to a broader family of problems. Including it as a full entry would give it misleading weight. Flagging it as hard/optional 
     is honest about its interview frequency and pattern transferability.
+
+-------------------------------
+Me to you:
+    Okay, you did great job around Queue as well.
+    Now it's the time to start working on Heaps & Greedy patterns.
+    Let's first start with Heaps, once we're done, then we're gonna do Greedy problems.
+    As usual, I collected all problems
+    from FRAZ & Algomaster.io, which is available on "Heaps prob aggregation.md" file.
+
+    So go ahead and start working as did deep analysis during Graph, DP, Binary Tree, BST or Ordered Set, Recursion & Backtracking, 
+    Binary search, Linked List, Stack, Queue.
