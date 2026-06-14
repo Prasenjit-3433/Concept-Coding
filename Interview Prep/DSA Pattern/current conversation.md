@@ -320,131 +320,115 @@ Me to you:
     Binary search, Linked List, Stack.
 ------------------------------------------------------------
 You to me:
-    I've gone through all the files carefully, including `current conversation.md` which gives me the full picture of our work so far.
+
+    I've gone through all the files carefully, including current conversation.md which gives me the full picture of our work so far.
     
-    **Completed topics:**
-      - Graph
-      - DP
-      - Binary Tree
-      - BST / Ordered Set
-      - Recursion & Backtracking
-      - Binary Search
-      - Linked List
-      - Stack
+    Completed topics:
     
-    **Current task:** Queue — the `Queue prob aggregation.md` has problems collected from both Fraz and Algomaster, and `Queue Prob Pattern.md` is currently **empty**. My job is to build it from scratch with the same rigor.
+    Graph
+    DP
+    Binary Tree
+    BST / Ordered Set
+    Recursion & Backtracking
+    Binary Search
+    Linked List
+    Stack
+    Queue
+    Current task: Heap — the Heap prob aggregation.md has problems collected from both Fraz and Algomaster, and 
+    Heap Prob Pattern.md currently empty. My job is to build it from scratch with the same rigor.
     
     Let me do the full analysis now.
     
-    ---
+    Step 1: Pattern Inventory from Both Sheets
+    Fraz's patterns:
     
-    ## Step 1: Pattern Inventory from Both Sheets
+    Implementation Questions
+    Kth Pattern Problems
+    Minimize Operations
+    Merge K Sorted Patterns
+    Two Heap Pattern
+    Algomaster's patterns:
     
-    **Fraz's patterns:**
-      - Implementation Problems
-      - Singly-Ended Queue
-      - Doubly-Ended Queue
+    Standard problems
+    Two Heaps
+    K-Way Merge
+    Top K Elements
+    Step 2: Problem Analysis & Conflict Resolution
+    Fraz's "Implementation Questions" and Algomaster's "Standard problems" are the same bucket with different names. "Kth Pattern Problems" and "Top K Elements" significantly overlap. "Merge K Sorted Patterns" and "K-Way Merge" are the same pattern. "Two Heap Pattern" and "Two Heaps" are identical. Good — no major naming wars here, just vocabulary differences.
     
-    **Algomaster's patterns:**
-      - Standard Queue Problems
-      - Monotonic Queue
+    Let me analyze every problem across both sheets:
     
-    ---
+    Standard / General Heap problems:
     
-    ## Step 2: Problem Analysis & Conflict Resolution
+    LC 1046. Last Stone Weight → pure max-heap simulation
+    LC 215. Kth Largest Element in an Array → quickselect OR min-heap of size k — important to know both
+    LC 2208. Minimum Operations to Halve Array Sum → max-heap greedy
+    LC 1845. Seat Reservation Manager → min-heap of available seats
+    LC 1942. The Number of the Smallest Unoccupied Chair → min-heap for tracking seat availability with arrival time
+    LC 2336. Smallest Number in Infinite Set → min-heap + set
+    LC 2530. Maximal Score After Applying K Operations → max-heap, repeatedly take max and reinsert ceil(val/3)
+    LC 1167. Minimum Cost to Connect Sticks → classic huffman-like min-heap
+    LC 767. Reorganize String → max-heap greedy, interleave most-frequent char
+    LC 1405. Longest Happy String → max-heap greedy, pick highest frequency non-consecutive
+    LC 2542. Maximum Subsequence Score → sort + min-heap for top-k selection
+    LC 857. Minimum Cost to Hire K Workers → sort by wage/quality ratio + max-heap to maintain smallest K quality sum
+    LC 1882. Process Tasks Using Servers → two heaps (available + busy servers)
+    LC 1834. Single-Threaded CPU → sort by arrival + min-heap for task scheduling by processing time
+    LC 2931. Maximum Spending After Buying Items → greedy with heap
+    LC 407. Trapping Rain Water II → 3D extension of rain water using min-heap BFS (boundary)
+    LC 632. Smallest Range Covering Elements from K Lists → heap + sliding window across K lists
+    Top K Elements:
     
-    Fraz's "Singly-Ended Queue" and Algomaster's "Standard Queue Problems" are essentially the same bucket. Fraz's "Doubly-Ended Queue" and Algomaster's "Monotonic Queue" overlap but are not identical — a deque is the data structure, a monotonic queue is the *technique*. These need to be cleanly separated.
+    LC 703. Kth Largest Element in a Stream → min-heap of size k, top is kth largest
+    LC 973. K Closest Points to Origin → max-heap of size k OR quickselect
+    LC 347. Top K Frequent Elements → min-heap of size k on frequencies
+    LC 658. Find K Closest Elements → binary search OR sorted + two-pointer (actually belongs in Binary Search sheet — but heap approach is valid too; we already have it in BS sheet, skip here)
+    LC 2462. Total Cost to Hire K Workers → two min-heaps from both ends of array
+    Merge K Sorted / K-Way Merge:
     
-    Let me analyze every problem:
+    LC 373. Find K Pairs with Smallest Sums → heap on (sum, i, j) pairs — virtual merge of n×n matrix
+    GFG: Merge K Sorted Arrays → K-way merge using min-heap
+    LC 23. Merge K Sorted Lists → min-heap on list nodes (already in Linked List sheet — cross-reference only)
+    LC 378. Kth Smallest Element in a Sorted Matrix → K-way merge OR binary search (already in BS sheet — cross-reference)
+    LC 632. Smallest Range Covering Elements from K Lists → K-way merge with range tracking
+    Two Heaps:
     
-    **Implementation / Design problems (Fraz):**
-      - Implement Stack Using Queues, Implement Queue Using Stacks, Queue Using Two Stacks → classic CS fundamentals, interview warm-ups
-      - Design Circular Queue, N-Queue Using Array → implementation-level design
-      - Design Circular Deque → deque design
+    LC 295. Find Median from Data Stream → max-heap (lower half) + min-heap (upper half) — canonical two-heap
+    LC 502. IPO → two heaps: sorted by capital (min-heap) + sorted by profit (max-heap)
+    LC 480. Sliding Window Median → two heaps with lazy deletion (also in BST Ordered Set sheet — cross-reference)
+    LC 2402. Meeting Rooms III → two heaps: available rooms + occupied rooms with end times
+    LC 1851. Minimum Interval to Include Each Query → offline sort + min-heap of (length, end), sweep queries
+    Scheduler / Event-Driven problems:
     
-    **Standard Queue problems (Fraz + Algomaster):**
-      - Find the Winner of the Circular Game (LC 1823) → simulate Josephus problem with queue
-      - Reveal Cards in Increasing Order (LC 950) → simulate queue-based card dealing
-      - Number of Recent Calls (LC 933) → sliding window via queue
-      - Time Needed to Buy Tickets (LC 2073) → circular queue simulation
-      - Moving Average from Data Stream (LC 346) → fixed-size window sum via queue
-      - First Unique Number (LC 3656) → queue + set for ordering
-      - Number of People Aware of a Secret (LC 2327) → BFS-like spreading via queue
-      - Stamping the Sequence (LC 936) → hard simulation problem, reverse stamping via queue
+    LC 621. Task Scheduler → max-heap greedy + cooldown management (also in Greedy sheet — this one genuinely lives in both)
+    LC 1353. Maximum Number of Events That Can Be Attended → sort by start + min-heap of end times, greedy daily
+    LC 218. The Skyline Problem → max-heap with lazy deletion (event sweep)
+    LC 2542. Maximum Subsequence Score → sort + min-heap
+    LC 786. Kth Smallest Prime Fraction → heap on fractions
+    LC 1882. Process Tasks Using Servers → two heaps
+    Step 3: Missing Problems Worth Adding
+    LC 215. Kth Largest Element in an Array — not listed in either sheet explicitly (surprising omission). This is one of the most frequently asked heap/quickselect problems. Must add under Top K.
+    LC 786. Kth Smallest Prime Fraction — good K-way merge variant, missing from both. Add.
+    LC 1851. Minimum Interval to Include Each Query — offline sweep + heap, a clean hard problem that generalizes the event scheduling pattern. Add.
+    LC 502. IPO — in Algomaster under Two Heaps, not in Fraz. Keep.
+    LC 407. Trapping Rain Water II — 3D heap problem, high difficulty but genuinely asked at Google/Meta. Flag as optional hard.
+    Cross-reference only (already fully covered in other sheets):
     
-    **Monotonic Queue / Deque problems:**
-      - Sliding Window Maximum (LC 239) → the canonical monotonic deque template
-      - Continuous Subarrays (LC 2762) → sliding window with monotonic deque for range tracking
-      - Jump Game VI (LC 1696) → sliding window DP with deque (already in DP sheet)
-      - Find the Most Competitive Subsequence (LC 1673) → monotonic deque greedy
-      - Partition Array Such That Maximum Difference is K (LC 2294) → sliding window
-      - Longest Continuous Subarray with Abs Diff ≤ Limit (LC 1438) → two deques (max + min)
-      - Max Value of Equation (LC 1499) → deque on linear recurrence
-      - Constrained Subsequence Sum (LC 1425) → sliding window DP with deque (already in DP sheet)
-      - Shortest Subarray with Sum at Least K (LC 862) → prefix sum + monotonic deque
+    LC 23. Merge K Sorted Lists → Linked List sheet (Pattern 4)
+    LC 378. Kth Smallest Element in a Sorted Matrix → Binary Search sheet (Pattern 6)
+    LC 480. Sliding Window Median → BST/Ordered Set sheet (Pattern 8)
+    LC 658. Find K Closest Elements → Binary Search sheet (Pattern 7)
+    LC 621. Task Scheduler → mention in Greedy as primary home; heap approach noted here
+    Step 4: Final Pattern Structure
+    After analysis, five patterns emerge naturally:
     
-    ---
-    
-    ## Step 3: Conflict Resolution & Classification
-    
-    **Key conflict:** Fraz puts "Sliding Window Maximum" under Doubly-Ended Queue (data structure focus). Algomaster puts it under Monotonic Queue (technique focus). The technique label is more useful for pattern recognition — **Monotonic Queue wins**.
-    
-    **Cross-sheet duplicates with DP sheet:**
-      - LC 1696 Jump Game VI — already in DP sheet (Sliding Window DP). Keep a reference here but don't list as primary.
-      - LC 1425 Constrained Subsequence Sum — same situation.
-    
-    These two problems sit at the intersection of DP and Queue patterns. Primary home is DP sheet. A cross-reference note in the Queue sheet is the right call — same as how LC 394 Decode String appears in both Stack and Recursion sheets with a note.
-    
-    **Stamping the Sequence (LC 936):** This is genuinely hard and somewhat isolated in technique — reverse simulation with a queue. It's rare in interviews and the technique doesn't generalize broadly. Flag it as optional/hard at the end of the Standard Queue section.
-    
-    ---
-    
-    ## Step 4: Missing Problems Worth Adding
-    
-      - **LC 862. Shortest Subarray with Sum at Least K** — listed in Algomaster's monotonic queue section. This is one of the most important deque problems — prefix sum + monotonic deque to find shortest subarray. Must keep.
-      - **LC 239. Sliding Window Maximum** — listed in both sheets. This is the canonical template for all monotonic deque problems. Non-negotiable anchor problem.
-      - **LC 1438. Longest Continuous Subarray with Abs Diff ≤ Limit** — two deques simultaneously (one for max, one for min). Strong interview problem, keep.
-      - **Missing from both sheets:** LC 59 Spiral Matrix II / LC 54 Spiral Matrix — sometimes appears in queue-based BFS simulations, but these belong in Array, not Queue. Don't add.
-      - **Missing:** The Josephus problem (LC 1823 Find Winner of Circular Game) appears in Fraz. Keep — it's a clean queue simulation problem asked at Amazon/Google.
-        
-      ---
-    
-      ## Step 5: Final Pattern Structure
-    
-      After analysis, four patterns emerge naturally:
-    
-         1. **Queue Implementation & Design** — the data structure mechanics; needed before anything else
-         2. **Standard Queue Simulation** — problems where a queue models a process: circular games, card dealing, ticket buying, secret spreading
-         3. **Monotonic Deque — Sliding Window** — the canonical technique: maintain a deque of useful candidates across a window
-         4. **Monotonic Deque — Advanced Applications** — harder problems: prefix sum + deque, DP + deque, two simultaneous deques
+    Standard Heap Problems — direct heap usage: simulation, greedy with heap, basic push/pop logic
+    Top K Elements — maintain a heap of size k; answer lives at the top
+    K-Way Merge — merge multiple sorted sequences using a heap; extend to pair/tuple enumeration
+    Two Heaps — partition a stream into two halves; median, profit maximization, sliding window median
+    Scheduler / Event-Driven Heap — events sorted by time, heap manages active intervals or task queues
 
-     ---
-
-     Here is the complete final sheet and saved as Queue Prob Pattern.md inside Queue folder.
-
-    ---
-
-    The Queue sheet is now complete. A few key structural decisions to flag:
-
-    **Why split Monotonic Queue into two tiers?** Fraz and Algomaster both treated it as one bucket. But LC 239 and LC 862
-    require fundamentally different entry points — one is pure sliding window, the other requires you to first recognize 
-    a prefix sum or DP structure. Conflating them causes learners to memorize LC 862 without understanding why the deque is there.
-
-    **Why keep LC 1696 and LC 1425 as cross-references rather than full entries?** Because their primary lesson is the DP 
-    recurrence, not the deque. Adding them as full entries here would duplicate work from the DP sheet and dilute the Queue
-    pattern's identity. The cross-reference preserves the connection without redundancy.
-
-    **Stamping the Sequence (LC 936) flagged as optional.** The reverse simulation technique is clever but does not generalize
-    to a broader family of problems. Including it as a full entry would give it misleading weight. Flagging it as hard/optional 
-    is honest about its interview frequency and pattern transferability.
-
--------------------------------
-Me to you:
-    Okay, you did great job around Queue as well.
-    Now it's the time to start working on Heaps & Greedy patterns.
-    Let's first start with Heaps, once we're done, then we're gonna do Greedy problems.
-    As usual, I collected all problems
-    from FRAZ & Algomaster.io, which is available on "Heaps prob aggregation.md" file.
-
-    So go ahead and start working as did deep analysis during Graph, DP, Binary Tree, BST or Ordered Set, Recursion & Backtracking, 
-    Binary search, Linked List, Stack, Queue.
+---------------------------
+Me to You:
+    Okay, you did great job around Binary Search as well.
+    Now it's the time for Greedy problems.
