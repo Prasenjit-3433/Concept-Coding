@@ -81,4 +81,13 @@ Me to you:
     (only keep thing in mind - always code in Java (my preferred language!))
     
     
-    Since it will be long, don't hurry, do it step by step...don't compromise on the quality of note! .. whenever you're ready!
+    Since a solution can be long, do it step by step, dont' try to do it in one single response... if necessary do it in multiple response,
+    so that explanation in each step remains comprehensive. Don't hurry...don't compromise on the quality of note! 
+    This will matter a lot when the problem is medium or hard problem!
+
+    Note: One more thing to consider, in each topic or pattern, you would see that the theory note & some prob with 
+          solution were already available - these theory & prob are taught by Striver as I build my foundation using
+          Striver's AZ sheet. Try to follow along his teaching style, coding style from these notes because I'm very 
+          comfortable with his teaching style.
+
+    Now, whenever you're ready!
