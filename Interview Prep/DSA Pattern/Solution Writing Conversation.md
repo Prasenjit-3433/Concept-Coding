@@ -124,4 +124,10 @@ Me to you:
     should serve as the foundation for all other problems in our sheet.
     You have to imitate his teaching style word by word from his lecture (I'm gonna provide video transcript), so that you can
     write solution of other problems following those style because I'm very much habituated of his teaching style.
+
+    Also, don't just explain TC & SC in one line...explain them in little bit more detail like how striver did during his lecture.
+    
+    Note: The most important thing is whenever you start writing solution on a topic, you must go through all the existing solutions written
+          for different problems from that topic because you would be able to understand Striver's teaching style, template for solving problem very
+          deeply. Then you would be able to write solution exactly the way what I learned through watching the video lecture.
     
