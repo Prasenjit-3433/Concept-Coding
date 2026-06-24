@@ -131,3 +131,6 @@ Me to you:
           for different problems from that topic because you would be able to understand Striver's teaching style, template for solving problem very
           deeply. Then you would be able to write solution exactly the way what I learned through watching the video lecture.
     
+    Tip 1: For dp problems, during explanation of tabulation approach, if you can calculate the entire table for the test case
+           Striver used or your own test case, whichever explain the concept clearly, would be really great!
+    
