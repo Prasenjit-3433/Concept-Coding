@@ -25,6 +25,11 @@ Me to you:
     
     Stage 2: Intuition Building
     here we're gonna build the entire intuition of the problem from foundation. we're gonna ask ourself, why we need a particular data structure or an algorithm from first principles.
+    Never ever do dry run
+    like at index 0, we do this,
+         at index 1, we do that
+
+    you don't need to do so, you aim should only be build the intuition!...then code and that it!
     
     Write everything in a very clean & clear way, no buzzwords.... easy-to-understand language!
     Use a detailed diagram to explain things, it helps a lot to understand difficult concept.
@@ -134,3 +139,23 @@ Me to you:
     Tip 1: For dp problems, during explanation of tabulation approach, if you can calculate the entire table for the test case
            Striver used or your own test case, whichever explain the concept clearly, would be really great!
     
+    Tip 2: One more thing, I also realized that step by step dry run is not very useful, when written as text
+            it's only useful in video!
+            so I think we should write it in different way, so that when I come back after watching the vide or forget something, I can quickly read it & rebrush my old memory
+            we can remove the step by step dry run and instead, write the workflow in text format
+            everything else stays same.
+            
+            That's why don't hurry...don't compromise on the quality of note! .. whenever you're ready....tell me!
+    
+
+---------------------------------------
+You to me:
+    I understood your instructions. Let me start working.
+
+-----------------------------------
+Me to you:
+    after seeing your solution, I realized one thing, you're writing the whole lecture in one go like in one single
+    response. As a result, the quality of explanation falls down, explanation of Striver was way better!
+    you need to really work on this.
+    write an entire lecture in multiple steps, so that quality of explanation stays top-notch!
+    Look at how striver's explanation is!...he draws digrams on his iPad while explanating
