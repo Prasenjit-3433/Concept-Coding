@@ -138,6 +138,10 @@ Me to you:
     
     Tip 1: For dp problems, during explanation of tabulation approach, if you can calculate the entire table for the test case
            Striver used or your own test case, whichever explain the concept clearly, would be really great!
+           I'm asking this because in few problem, calculating the whole table helps you understand better
+           For example, look at Pattern 4 - prob: Partition A Set Into Two Subsets With Minimum Absolute Sum Difference
+             But this is not always the case, in most problems, Striver's template for going from memoization to tabulation
+             works fine.
     
     Tip 2: One more thing, I also realized that step by step dry run is not very useful, when written as text
             it's only useful in video!
