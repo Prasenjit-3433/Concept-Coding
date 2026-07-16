@@ -169,3 +169,16 @@ Me to you:
     you need to really work on this.
     write an entire lecture in multiple steps, so that quality of explanation stays top-notch!
     Look at how striver's explanation is!...he draws digrams on his iPad while explanating
+
+-----------------------------------
+Me to you:
+    Also, the most important tip -
+    put most emphasis on building the intuition through walking via real examples with diagrams, explanations like how 
+    striver does in each lecture.
+    so the choice of examples plays very a crucial role while building the intuition. This is because one good example
+    or test case can help you to build the initial approach or intuition from ground up or scratch!
+    Then few edge case example can validate or invalidate our intuition - to confirm!
+    
+    Therefore, the quicker one person comes up with good examples during initial inituition the quicker he would be able
+    to solve the problem.
+    So during yoour "inituition building" section, follow this.
