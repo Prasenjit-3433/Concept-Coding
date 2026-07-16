@@ -81,7 +81,13 @@ Me to you:
     / \
     N   5
 
-    you can give me like an array: 1,2,3,null,5
+    you can give me like this:
+    1 2
+    1 3
+    2 null
+    2 5
+
+    (above, each entry will be converted into a children from left to right)
     
     (only keep thing in mind - always code in Java (my preferred language!))
     
