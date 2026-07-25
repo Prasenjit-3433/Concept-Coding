@@ -32,3 +32,76 @@ Me to You:
 
 
     whenever you're ready....tell me!
+
+------------------------------------------------------
+You to me:
+    Hi! I've gone through all three documents carefully — here's what I now have full context on:
+    
+    **Your instructions (from `current conversation.md`):**
+      - You're following Shreyash Jain's "EDA with Kafka" YouTube playlist and building detailed notes from transcripts + his provided notes.
+      - Style: clean, clear, buzzword-free, word-by-word close to what the instructor says but improved/organized by me.
+      - Structure notes the way the instructor teaches — problem first, then concept, then use cases, then when-to-use.
+      - Always include detailed diagrams, since they help a lot.
+      - Always capture any interview tips/tricks the instructor mentions.
+      - **Critical rule:** never dump a whole 30-60+ min lecture in one response — break it into steps, plan the breakdown first, keep each step comprehensive.
+      - **Critical rule #2:** every concept needs all three — diagram + explanation + code (where applicable) — not just one or two of them well done.
+    
+    **What's already covered (so I don't repeat it):**
+      - **Lecture 1 – Foundation of EDA:** EDA definition, Event vs Command vs Query, event properties, REST flow + its 5 problems (availability, latency accumulation, cascading failure, tight coupling, scaling), EDA re-architecture (critical vs non-critical path split), 5 advantages, core components (Producer/Broker/Consumer), Push vs Pull models, Pub/Sub vs Streaming models, the 7 challenges of EDA, and the 4 use-case signals for choosing EDA.
+    
+    So I'm fully caught up and ready to continue. Whenever you're ready, drop the transcript + instructor's notes for the next lecture (sounds like it'd be **Kafka Architecture Part 2 — Consumer & Consumer Groups**), and I'll:
+    
+    1. First share a content breakdown plan for that lecture (so you can sanity-check the structure before I write it).
+    2. Then write it step by step, keeping diagrams + explanation + code all solid at each step.
+    
+    Go ahead and share it whenever you're ready!
+
+----------------------------------------------------------
+Me to you:
+
+    Next 5 lectures would be on Kafka Architecture. Here instructor provided one single note of 36 pages, which has note of
+    all these 5 lectures together.
+    Every time, I'm gonna give you transcript of one lecture, you've to read & understand it and then from instructor's
+    provided PDF note, you have to cover only the portion taught in video transcript, not entire PDF.
+
+    We finished lecture 1 of Kafka Architecture, and now this is time for Lecture 2.
+    I provided the transcript of lecture 2 of Kafka Architecture, along with the big PDF note.
+
+    read and understand everything carefully...don't mixed up contents!
+
+-----------------------------------------------------------
+You to me:
+
+    I've carefully read through the Lecture 2 transcript and cross-referenced it against the big 36-page PDF. I want to 
+    flag something important before planning: **the PDF combines all 5 Kafka Architecture lectures into one document**, but the transcript you gave me for "Lecture 2" only goes up to a certain point — it does **not** yet cover Controller, KRaft/Zookeeper, ISR, ack values, log compaction, or the page cache/zero-copy internals. Those all get *mentioned as upcoming* but the instructor explicitly defers them ("I will cover in the next part").
+    
+    Here's exactly where Lecture 2's transcript starts and stops, mapped to the PDF:
+    
+    **Where Lecture 2 starts (picking up right after Lecture 1 ended on Broker):**
+    - Consumer & Consumer Group — introduction, groups (notification, analytics)
+    
+    What Lecture 2's transcript actually covers (in order):
+       1. Consumer Group Rules — same partition can't be read by 2 consumers in the same group; different groups *can* read the same partition
+       2. Three scenarios: consumers = partitions / consumers < partitions / consumers > partitions (idle consumers)
+       3. Multiple consumer groups reading the same partition independently
+       4. Each consumer group maintains partition-wise offset **independently**
+       5. Where offsets are stored → the internal `_consumer_offsets` topic (50 partitions by default) — shown via Kafka UI
+       6. How the partition for a group is computed → `hash(group.id) % 50`, and *why* this matters (which broker to connect to — tied back to "broker holds only some partitions")
+       7. Consumer crash + recovery flow — new consumer fetches last committed offset from `_consumer_offsets`
+       8. Offset Commit Strategies — **Auto-commit** (with the risky crash example, event loss 51–99) vs **Manual commit** (batch-wise, recommended; per-event, not recommended)
+       9. Transition line: "producer, topic, partition, broker, consumer, consumer group should be clear now"
+       10. **Kafka Cluster** definition — scalability, fault tolerance, high availability (just the definitions, not deep mechanics yet)
+       11. **Leader-Follower Partition** concept with the concrete example (3 partitions, replication factor 2, 6 total partition-replicas distributed across 3 brokers)
+       12. Leader Responsibilities vs Follower Responsibilities
+       13. **Stops right at**: "who decides which broker hosts which partition replica... that's the Controller... I'll cover in the next part" — this is the hard stop.
+    
+    So my note for Lecture 2 will end right after Leader/Follower responsibilities, and will **not** touch Controller, Consensus/Quorum, KRaft vs Zookeeper, ISR, ack levels, log compaction, or page cache/zero-copy — even though the PDF has all of that content, since the instructor hasn't taught it in this video yet.
+    
+    My proposed breakdown for writing this (so quality doesn't drop):
+    
+      - **Step 1:** Consumer & Consumer Group — definitions, the 2 core rules, 3 assignment scenarios, multi-group example (with diagrams)
+      - **Step 2:** Offset tracking — `_consumer_offsets` internal topic, partition computation via hash, crash-recovery flow (with diagram)
+      - **Step 3:** Offset Commit Strategies — auto vs manual, with the timeline walkthroughs
+      - **Step 4:** Kafka Cluster intro + Leader-Follower Partition model + Leader/Follower responsibilities (with diagram), ending exactly where the instructor stops
+    
+    Does this breakdown look right to you? If yes, I'll start writing Step 1 now.
