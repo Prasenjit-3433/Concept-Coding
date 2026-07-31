@@ -150,3 +150,9 @@ You to me:
 Me to you:
     so by now, part of Kafka Architecture - Part 3: Controller, ZooKeeper vs KRaft, Quorum & Raft Consensus, ISR, Acknowledgment Levels
     is done. Now next is part 4 of Kafka Architecture.
+
+------------------------------------------
+Me to you:
+    we've written note of Part 4: Producer Write Flow, Consumer Read Flow, Log Retention (Delete & Compact), Kafka Speed Optimizations.
+    Now next is Kafka Architecture - Part 5, which is also the last lecture of Kafka Architecture. This covers most edge cases &
+    failure scenarios.
