@@ -432,3 +432,8 @@ You to me:
 Me to You:
     Okay, you did great job around Binary Search as well.
     Now it's the time for Greedy problems.
+
+--------------------------------------
+Me to You:
+    We're back again! We did upto Greedy.
+    Now it's time for Intervals, Bit Manipulations, Data Structure Design problems.
