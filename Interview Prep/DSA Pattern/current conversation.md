@@ -432,18 +432,22 @@ You to me:
 Me to You:
     Okay, you did great job around Binary Search as well.
     Now it's the time for Greedy problems.
+    Spend enough time on analyzing loophole in prob collection - if any pattern, concept or any technique missing   
 
 --------------------------------------
 Me to You:
     We're back again! We did upto Greedy.
     Now it's time for Intervals, Bit Manipulations, Data Structure Design problems.
+    Spend enough time on analyzing loophole in prob collection - if any pattern, concept or any technique missing
 
 --------------------------------------
 Me to You:
     Okay, we finished writing Intervals DSA prob patterns.
     now it's time for Bit Manipulation.
+    Spend enough time on analyzing loophole in prob collection - if any pattern, concept or any technique missing
 
 -------------------------------------
 Me to you:
     Great!..we're done with Bit Manipulation as well.
     Now it's time for Sliding Window!
+    Spend enough time on analyzing loophole in prob collection - if any pattern, concept or any technique missing  
