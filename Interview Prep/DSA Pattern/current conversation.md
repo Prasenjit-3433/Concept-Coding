@@ -450,4 +450,10 @@ Me to You:
 Me to you:
     Great!..we're done with Bit Manipulation as well.
     Now it's time for Sliding Window!
-    Spend enough time on analyzing loophole in prob collection - if any pattern, concept or any technique missing  
+    Spend enough time on analyzing loophole in prob collection - if any pattern, concept or any technique missing 
+
+-------------------------------------
+Me to you:
+    Great!..we're done with Sliding Window as well.
+    Now it's time for 2 pointers & prefix sum one by one!
+    Spend enough time on analyzing loophole in prob collection - if any pattern, concept or any technique missing.
