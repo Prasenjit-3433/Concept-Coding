@@ -64,7 +64,7 @@ Me to you:
 
 --------------------------------
 Me to you:
-    Since unit I already been taught by someone else, I will be teaching from Unit II
+    Since unit I have already been taught by someone else, I will be teaching from Unit II
     so for unit II, you don't have to put notes of all 8 classes, rather
     just do it for first 2 classes one by one, so quality of explanation remains comprehensive.
     each class in one single response, so that quality of explanation remains top notch!
