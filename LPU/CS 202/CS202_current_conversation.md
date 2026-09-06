@@ -14,5 +14,9 @@ Me to you:
     use diagrams to explain your thoughts, so that students can learn concepts easily from scratch!
     Also, try to keep your explanation as close as possible to what the instructor from LearnYard taught in those YouTube lecture.
 
+    in any case, if the response is getting bigger, then do it in 2/3 different responses, don't try to put everything in
+    one single response, otherwise the quality of explantion will be reduced significantly. Our goal is not just to deliver
+    content, rather teach students very well each concept in easy-to-understandable language.
+
     Whenever you're ready!
     
