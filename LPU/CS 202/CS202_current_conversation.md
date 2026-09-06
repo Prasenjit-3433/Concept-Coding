@@ -12,6 +12,7 @@ Me to you:
     Guidelines for writing notes:
     write it in a very clean & clear way, no buzzword, it should be very easy to understand because this will read by first time programming learners...
     use diagrams to explain your thoughts, so that students can learn concepts easily from scratch!
+    Also, try to keep your explanation as close as possible to what the instructor from LearnYard taught in those YouTube lecture.
 
     Whenever you're ready!
     
