@@ -149,3 +149,21 @@ You to me:
                Gap Fill note explicitly says up front which topics it's extending and why (e.g., *"LearnYard's Pointers lecture covered the practical mechanics well — this note adds the syllabus-required depth on pointer-to-data-member, `this` pointer, and classes containing pointers, which the video didn't get into."*). This avoids confusing students about why there are two files for one unit.
     
     ---
+
+-----------------------------------------------------
+Me to you:
+    The next few lectures of learnYard have order like this
+    - Structure, Union & Enums in C++ 
+    - class, objects, access specifiers 
+    - constructor & destructor
+    
+    Then OPPs starts with lecture on inheritance!
+
+    But if you take a look at syllabus, you'll see
+
+    - Structure, Union & Enums & class, objects, access specifiers are part of Unit 1
+    - constructor & destructor are part of Unit 3
+
+    Therefore, as we keep learning & making notes for students, we've to put the note in appropriate place, along
+    with keep referencing if anything left.
+    got it?
