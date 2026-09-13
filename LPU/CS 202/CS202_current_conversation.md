@@ -172,3 +172,7 @@ Me to you:
     end, then your job will be to scan the Unit 2 in syllabus, and start writing a note covering the missing concepts!
 
     Understood the plan?
+
+-----------------------
+Me to you:
+    Great job! Unit II is done, now we'll be moving to Unit 3.
