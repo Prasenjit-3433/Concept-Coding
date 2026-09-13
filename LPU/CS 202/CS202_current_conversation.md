@@ -166,4 +166,9 @@ Me to you:
 
     Therefore, as we keep learning & making notes for students, we've to put the note in appropriate place, along
     with keep referencing if anything left.
-    got it?
+    Since I'm following the instructor of learnyard, I'll be putting Structure, Union & Enums & class, objects, 
+    access specifiers in Unit 2.
+    The next lecture I'll be putting is "Class Objects & Access Specifiers" and that's it! It will be the last from my
+    end, then your job will be to scan the Unit 2 in syllabus, and start writing a note covering the missing concepts!
+
+    Understood the plan?
