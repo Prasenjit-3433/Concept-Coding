@@ -30,3 +30,10 @@ You to me:
       - **Class 4** bundles circular lists with a wrap-up/comparison since circular lists are a smaller conceptual jump once singly/doubly are solid, and this also gives a natural checkpoint before moving to the next Unit II topic (e.g., stacks/queues, if that's next in your CS205 syllabus).
     
     Want me to adjust the pacing (split/merge any classes), or is this good to start with **Class 1: Introduction to Linked Lists & Singly Linked List Basics**?
+
+--------------------------------------
+Me to you:
+    We're done writing the theory note. Now it's the time to solve few LeetCode problems.
+    I've a list of good LeetCode problems and will be solving them!
+    I'll be giving you the transcript of Striver's solution and from there you've to write the solution note following
+    exactly his teaching style, with explicitly mentioning striver's name anywhere!
