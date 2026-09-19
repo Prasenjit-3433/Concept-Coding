@@ -457,3 +457,45 @@ Me to you:
     Great!..we're done with Sliding Window as well.
     Now it's time for 2 pointers & prefix sum one by one!
     Spend enough time on analyzing loophole in prob collection - if any pattern, concept or any technique missing.
+
+-------------------------------------
+Me to you:
+    Great!..we're done with 2 pointers & prefix sum as well.
+    Now it's time for Arrays, Strings, Hashing, Sorting, Math & Geometry, Matrix, one by one!
+    
+    This is a very important thing, I'm collecting problems from Fraz DSA sheet, Algomaster.io DSA sheet. 
+    This Fraz DSA sheet has around 1450+ DSA problems & Algomaster.io DSA sheet has 771+ DSA problems in total.
+    In fact, in future, I might add more problems from other good dsa sheet like cses problem set or CP-31 sheet
+    by TLE Eliminators.
+    These problems are for practice.
+
+    Our aim should be to include every new problem or most asked interview problems, rather aim should be to scan through
+    these massive problem sheet, then analyze deeply "what are the actual or raw concepts / patterns". Then only take
+    those unique raw concepts / patterns in our sheet.
+
+    For example, I gave you a list of 100's 2 pointers problems, but if you analyze deeply to figure out "what are the 
+    actual or raw concepts / patterns", you might be seeing, there're only 10-12 such unique raw concepts / patterns, 
+    rest of the problems are only variation of those 10-12 problems!
+
+    Therefore, spend enough time on analyzing loophole in prob collection 
+        - if any pattern, concept or any technique missing.
+        - If repition of problems based on the same concept happens like if any two problem are almost identical,
+          only very slight variation, then keep it.
+        - If any problem is total garbage like either if one know the solution, can only solve it. Then in those cases, 
+          keep the problem only if it's very famous, often comes in interview otherwise not.
+          
+    Our ultimate goal should be truly becoming good like Gennady Korotkevich!!...not just mugging up problems like
+    - Oh "Aggressive Cows", then it's binary search
+    - "Sort colors', then it's dutch national flag algorithm
+    - or anythinh like that!
+
+    If we can keep doing these for every topic in DSA / CP, we would be able to build a "All unique DSA core concepts / 
+    pattern dictionary", which will include all necessary prerequisites to solve 3000+ leetcode problems, or solve any 
+    problem in Codeforces / leetcode contests!
+
+    This is because "Problems are infinite, but patterns/concepts are finite" - this is the moto!
+    
+    All good competitive programmers build this "All Unique DSA core concepts / pattern dictionary" in their brain by 
+    their own, by solving 2000-3000+ problems, with years of practice. But we're gonna do it even more smartly!
+
+    So best of luck!
