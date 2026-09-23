@@ -37,3 +37,16 @@ Me to you:
     I've a list of good LeetCode problems and will be solving them!
     I'll be giving you the transcript of Striver's solution and from there you've to write the solution note following
     exactly his teaching style, with explicitly mentioning striver's name anywhere!
+
+------------------------------------------
+Me to you:
+    Today I'll be starting new unit: Stack & Queue
+    
+    Official Syllabus:
+    Stacks : Introduction: List and Array representations, Operations on stack (traversal, push and pop),
+    Arithmetic expressions: polish notation, evaluation and transformation of expressions.
+    Queue : Array and list representation, operations (traversal, insertion and deletion), Priority Queues,
+    Deques
+
+    I'll be following Striver's lecture to write note & explain. At the same, you'll be refering the above syllabus
+    to check if any concept or subtopic missed in note.
