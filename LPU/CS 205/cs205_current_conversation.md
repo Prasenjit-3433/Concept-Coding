@@ -50,3 +50,4 @@ Me to you:
 
     I'll be following Striver's lecture to write note & explain. At the same, you'll be refering the above syllabus
     to check if any concept or subtopic missed in note.
+    Got it?
