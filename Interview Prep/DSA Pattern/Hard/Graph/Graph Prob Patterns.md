@@ -1,7 +1,3 @@
-Here is the updated Graph sheet with all four changes applied:
-
----
-
 # Graph DSA Patterns
 
 *"Problems are infinite, but patterns are finite!"*
@@ -18,11 +14,11 @@ Here is the updated Graph sheet with all four changes applied:
 | Multi-source BFS | minimum distance from ANY of multiple sources |
 | 0/1 BFS | move costs strictly 0 or 1, use Deque |
 | Cycle Detection | "can you finish?", "is it possible?" on directed graph |
-| Topological Sort | prerequisites, ordering, dependencies, scheduling |
+| Topological Sort | prerequisites, ordering, dependencies, scheduling, deriving order from pairwise constraints |
 | Dijkstra | weighted graph, non-negative edges, minimum cost/effort |
 | Bellman-Ford | K-step constraint, negative weights, positive cycle detection |
 | Floyd-Warshall | all pairs shortest path, N ≤ 200, transitive closure |
-| DSU | merge groups, check if same component, dynamic connectivity |
+| DSU | merge groups, check if same component, dynamic/online connectivity |
 | MST | connect all nodes with minimum total cost |
 | Bridges & APs | which single edge/node removal disconnects the graph |
 | SCC | circular dependency, directed reachability groups |
@@ -63,7 +59,7 @@ Here is the updated Graph sheet with all four changes applied:
 | 4 | LC 1254. Number of Closed Islands | Boundary DFS — island must not touch border |
 | 5 | LC 1020. Number of Enclaves | Boundary DFS, count enclosed cells |
 | 6 | LC 417. Pacific Atlantic Water Flow | Reverse multi-source DFS from both boundaries |
-| 7 | LC 1островов. Count Sub Islands | DFS — check if island is subset of another grid |
+| 7 | LC 694. Count Sub Islands | DFS — check if island is subset of another grid |
 | 8 | LC 1992. Find All Groups of Farmland | DFS to detect rectangular land regions |
 | 9 | LC 79. Word Search | DFS + backtracking on grid |
 | 10 | GFG: Number of Distinct Islands | DFS + shape encoding/hashing |
@@ -98,12 +94,16 @@ Here is the updated Graph sheet with all four changes applied:
 
 **Identify:** Multiple starting points — seed ALL sources into queue at level 0 simultaneously.
 
+**Combining with a DFS pre-pass (LC 934):** Some problems need one component identified *before* multi-source BFS can even start. If the grid contains exactly two connected components (say, two islands) and the question is "minimum steps to connect them," a single DFS first collects every cell of one component and seeds the BFS queue with all of them — multi-source BFS then expands outward until it touches any cell belonging to the other component. Recognizing "find one shape with DFS, then multi-source BFS *from that entire shape*" as a two-step combination (rather than trying to force either technique alone) is the key insight LC 934 teaches, and it doesn't appear anywhere else in this sheet.
+
 | # | Problem | Key Concept |
 |---|---|---|
 | 1 | LC 994. Rotting Oranges | Multi-source BFS with time tracking |
 | 2 | LC 542. 01 Matrix | Multi-source BFS from all 0s outward |
 | 3 | LC 286. Walls and Gates | Multi-source BFS from all gates |
 | 4 | LC 1020. Number of Enclaves | Multi-source BFS from boundary cells |
+| 5 | LC 934. Shortest Bridge | DFS to find and seed one entire island, then multi-source BFS from every one of its cells to reach the other island |
+| 6 | LC 1765. Map of Highest Peak | Multi-source BFS from all water cells — height at each cell is its BFS layer |
 
 ---
 
@@ -134,18 +134,21 @@ Here is the updated Graph sheet with all four changes applied:
 
 **Identify:** DAG with dependencies — ordering where all prerequisites come before dependents.
 
+**Building the graph from pairwise constraints, not just consuming one (LC 269):** Every other problem in this pattern is handed an explicit edge list. Alien Dictionary is the one problem here where the *edges themselves* must be derived — compare each pair of adjacent words in the given order, and the first position where their characters differ gives exactly one edge (earlier-char → later-char). This is a genuinely different first step from every other topo-sort problem: the graph construction is the hard part, not the sort itself. Two edge cases make or break it: a word that is a prefix of the next word contributes no edge, but if the *longer* word comes first (`["abc","ab"]`), the ordering is already invalid and no valid topological sort can exist regardless of what the graph looks like.
+
 | # | Problem | Key Concept |
 |---|---|---|
 | 1 | Theory | Topological Sort — DFS + Stack |
 | 2 | Theory | Kahn's Algorithm — BFS with in-degree |
 | 3 | LC 207. Course Schedule | Cycle check via Kahn's — can we finish? |
 | 4 | LC 210. Course Schedule II | Kahn's — return actual topo order |
-| 5 | LC 444. Sequence Reconstruction | Topo sort uniqueness check |
-| 6 | LC 802. Find Eventual Safe States | Reverse graph + Kahn's |
-| 7 | LC 310. Minimum Height Trees | Leaf trimming = reverse topo sort |
-| 8 | LC 1462. Course Schedule IV | Topo + transitive reachability |
-| 9 | LC 329. Longest Increasing Path in a Matrix | Topo sort on implicit DAG in matrix |
-| 10 | LC 2050. Parallel Courses III | Topo + DP on DAG for critical path |
+| 5 | LC 269. Alien Dictionary | Derive edges from adjacent-word comparisons, not given directly — one edge per first differing character; invalid-prefix ordering means no valid sort exists |
+| 6 | LC 444. Sequence Reconstruction | Topo sort uniqueness check |
+| 7 | LC 802. Find Eventual Safe States | Reverse graph + Kahn's |
+| 8 | LC 310. Minimum Height Trees | Leaf trimming = reverse topo sort |
+| 9 | LC 1462. Course Schedule IV | Topo + transitive reachability |
+| 10 | LC 329. Longest Increasing Path in a Matrix | Topo sort on implicit DAG in matrix |
+| 11 | LC 2050. Parallel Courses III | Topo + DP on DAG for critical path |
 
 ---
 
@@ -224,24 +227,28 @@ Here is the updated Graph sheet with all four changes applied:
 
 ### Pattern 11: Disjoint Set Union (DSU)
 
-**Identify:** Dynamically merging components, checking if two nodes belong to same component.
+**Identify:** Dynamically merging components, checking if two nodes belong to same component, or answering connectivity queries *as edges arrive one at a time* (online), not just once on a fixed final graph.
+
+**Static vs. online connectivity — a distinction worth stating explicitly:** Most problems here build the DSU once, over a fixed edge list, and ask one final question (how many components? is there a cycle?). LC 305 is different: cells are added one at a time, and the number of islands must be reported *after every single addition* — DSU is the only structure in your reference that supports this "merge and re-query in O(α(n))" pattern, which is precisely why it exists as its own topic distinct from a one-shot BFS/DFS component count.
 
 | # | Problem | Key Concept |
 |---|---|---|
 | 1 | LC 323. Number of Connected Components | Basic DSU template |
 | 2 | LC 261. Graph Valid Tree | DSU + cycle check |
 | 3 | LC 684. Redundant Connection | DSU — first edge that forms a cycle |
-| 4 | LC 1319. Number of Operations to Make Network Connected | DSU + component count |
-| 5 | LC 721. Accounts Merge | DSU on string keys |
-| 6 | LC 947. Most Stones Removed with Same Row or Column | DSU on row/col indices not cells |
-| 7 | LC 924. Minimize Malware Spread | DSU + component size analysis |
-| 8 | LC 399. Evaluate Division | Weighted DSU |
-| 9 | LC 827. Making A Large Island | DSU + Grid DFS merge |
-| 10 | LC 2685. Count the Number of Complete Components | DSU + component degree check |
-| 11 | LC 1562. Find Latest Group of Size M | DSU with component size tracking over time |
-| 12 | LC 1697. Checking Existence of Edge Length Limited Paths | Offline DSU — sort queries + edges by weight together |
-| 13 | LC 1998. GCD Sort of an Array | DSU + Sieve — union numbers sharing a prime factor |
-| 14 | LC 1584. Min Cost to Connect All Points | DSU + MST bridge to next pattern |
+| 4 | LC 685. Redundant Connection II | Directed version — case split on whether a node has two parents (candidate edges to remove), one parent with a cycle (remove the cycle-closing edge), or both simultaneously |
+| 5 | LC 305. Number of Islands II | Online DSU — union one land cell at a time, report component count after each addition |
+| 6 | LC 1319. Number of Operations to Make Network Connected | DSU + component count |
+| 7 | LC 721. Accounts Merge | DSU on string keys |
+| 8 | LC 947. Most Stones Removed with Same Row or Column | DSU on row/col indices not cells |
+| 9 | LC 924. Minimize Malware Spread | DSU + component size analysis |
+| 10 | LC 399. Evaluate Division | Weighted DSU |
+| 11 | LC 827. Making A Large Island | DSU + Grid DFS merge |
+| 12 | LC 2685. Count the Number of Complete Components | DSU + component degree check |
+| 13 | LC 1562. Find Latest Group of Size M | DSU with component size tracking over time |
+| 14 | LC 1697. Checking Existence of Edge Length Limited Paths | Offline DSU — sort queries + edges by weight together |
+| 15 | LC 1998. GCD Sort of an Array | DSU + Sieve — union numbers sharing a prime factor |
+| 16 | LC 1584. Min Cost to Connect All Points | DSU + MST bridge to next pattern |
 
 ---
 
@@ -251,10 +258,12 @@ Here is the updated Graph sheet with all four changes applied:
 
 | # | Problem | Key Concept |
 |---|---|---|
-| 1 | LC 1584. Min Cost to Connect All Points | Prim's / Kruskal's template |
-| 2 | LC 1135. Connecting Cities With Minimum Cost | Kruskal's on explicit edge list |
-| 3 | LC 1168. Optimize Water Distribution in a Village | Virtual node MST trick |
-| 4 | LC 1489. Critical and Pseudo-Critical Edges in MST | MST edge classification |
+| 1 | Theory | Kruskal's Algorithm — sort edges by weight, DSU rejects any edge that would form a cycle, greedily add the rest |
+| 2 | Theory | Prim's Algorithm — grow one tree from an arbitrary start node, min-heap always picks the cheapest edge crossing the current tree's boundary |
+| 3 | LC 1584. Min Cost to Connect All Points | Prim's / Kruskal's template |
+| 4 | LC 1135. Connecting Cities With Minimum Cost | Kruskal's on explicit edge list |
+| 5 | LC 1168. Optimize Water Distribution in a Village | Virtual node MST trick |
+| 6 | LC 1489. Critical and Pseudo-Critical Edges in MST | MST edge classification |
 
 ---
 
@@ -309,14 +318,31 @@ Do these only after both constituent patterns are fully solid.
 
 ---
 
+## Out of Scope for This Sheet (Flagged, Not Forgotten)
+
+**Maximum Flow / Min Cut (Ford-Fulkerson, Edmonds-Karp, Dinic's)** and **Bipartite Matching (Hopcroft-Karp, Hungarian Algorithm)** — genuinely graph-theoretic, occasionally referenced by harder problems (LC 1349's bipartite-matching framing above is the exception, kept because a bitmask-DP alternative exists that doesn't require the full algorithm), but rarely the expected solution path in a standard interview setting. Consistent with how other sheets flag Fenwick Tree/Segment Tree — this belongs in a separate advanced/competitive-programming sheet, not bolted onto this one.
+
+---
+
 ## Summary
 
 | Phase | Patterns | Problems |
 |---|---|---|
-| Phase 1 — Foundation | Graph Traversal, Grid DFS, BFS Single, Multi-source BFS | 36 |
-| Phase 2 — Core Algorithms | Cycle Detection, Topo Sort, 0/1 BFS | 22 |
+| Phase 1 — Foundation | Graph Traversal, Grid DFS, BFS Single, Multi-source BFS | 38 |
+| Phase 2 — Core Algorithms | Cycle Detection, Topo Sort, 0/1 BFS | 24 |
 | Phase 3 — Weighted Shortest Path | Dijkstra, Bellman-Ford, Floyd-Warshall | 22 |
-| Phase 4 — Advanced Structures | DSU, MST, Bridges, SCC, Eulerian | 27 |
+| Phase 4 — Advanced Structures | DSU, MST, Bridges, SCC, Eulerian | 31 |
 | Phase 5 — Hard Combinations | Mixed | 4 |
-| **Total** | **15 Patterns** | **~111 problems** |
+| **Total** | **15 Patterns** | **~119 problems** |
 
+---
+
+## How to Use This Sheet
+
+**Pattern 4's LC 934 is worth flagging specifically before you reach it:** it's the first problem in the sheet where two earlier patterns (Grid DFS and Multi-Source BFS) must be combined in sequence rather than applied alone. If either feels shaky individually, do LC 200 and LC 994 again first — LC 934 will otherwise feel like a new pattern instead of a natural combination of two you already know.
+
+**Pattern 6's LC 269 should come right after LC 210.** Every problem before it hands you a graph; this one asks you to build one first. Say out loud what the edge-extraction rule is ("first differing character between adjacent words") before writing any topological sort code — the sort itself is unchanged from Kahn's algorithm, only the input construction is new.
+
+**Pattern 11's LC 305 is best done last in that pattern, after LC 684 is completely automatic.** The online/incremental flavor is a genuinely different usage of DSU (query after every union, not once at the end) and is easy to overcomplicate if the static case isn't already reflexive.
+
+**Pattern 12 now opens with explicit theory items, matching Patterns 5, 6, 9, 13, and 14 — implement Kruskal's and Prim's from scratch once before touching LC 1584**, the same discipline you already apply to cycle detection and topological sort elsewhere in this sheet.
