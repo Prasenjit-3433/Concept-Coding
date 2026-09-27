@@ -176,3 +176,16 @@ Me to you:
 -----------------------
 Me to you:
     Great job! Unit II is done, now we'll be moving to Unit 3.
+    Here is the syllabus for Unit 3:
+
+    Data File operations : Opening and closing of files, Modes of file, File stream functions,
+    Reading/Writing of files, Sequential access and random access file processing, Binary file operations,
+    Classes and file operations, Structures and file operation
+
+    Constructors, Destructors and File Handling : Manager functions (constructors and destructor),
+    Default constructor, Constructor with default arguments, Destructors, Parameterized constructor,
+    Copy constructor , Initializer lists
+
+    Now I'm giving the transcript of lecture Constructor & Destructor | OOPS in C++" along with instructor's
+    provided note, your job would be to understand the content and then check if any parts of the syllabus is missing
+    then combining both, start writing the final note in multiple parts in multiple responses.
