@@ -72,6 +72,8 @@ This is the most important skill. Before thinking about recurrence, ask these qu
 **Sliding Window DP — when it appears inside 1D DP:**
 > Sometimes `dp[i]` depends on the best of a *window* of previous states, not just `dp[i-1]` or `dp[i-2]`. Naively scanning that window is O(nk). The fix is a monotonic deque that maintains the running max/min in O(1) per step. Trigger: "at most k steps", "jump at most k", "window of size k" inside a DP recurrence. Canonical problems: LC 1696, LC 1425.
 
+**Implicit-graph / reachability DP — when the "previous state" isn't just an index (LC 403):** Most 1D DP problems have `dp[i]` depend only on earlier indices. Frog Jump breaks that shape: whether you can *stand* on stone `i` depends on *which jump sizes* got you there, since the next jump is constrained to `k-1, k, k+1` relative to the last one. The state is genuinely `(position, last jump size)`, and since jump size has no fixed bound, a 2D array doesn't fit — the same "unbounded second dimension → use a hashmap" rule from Pattern 6's LC 1027 applies here: maintain `HashMap<stonePosition, Set<jumpSizeThatReachedIt>>`, populated forward as you process each stone in order.
+
 | # | Problem | Key Concept |
 |---|---|---|
 | 1 | LC 509. Fibonacci Number | Base template: `dp[i] = dp[i-1] + dp[i-2]` |
@@ -86,6 +88,7 @@ This is the most important skill. Before thinking about recurrence, ask these qu
 | 10 | LC 2713. Maximum Strictly Increasing Cells in a Matrix | Sort by value + maintain row/col max — 1D DP on implicit DAG |
 | 11 | LC 1696. Jump Game VI | Sliding Window DP — deque maintains max of previous k states |
 | 12 | LC 1425. Constrained Subsequence Sum | Sliding Window DP — Kadane's variant with window constraint |
+| 13 | LC 403. Frog Jump | State = (stone position, last jump size) — hashmap of position → set of valid incoming jump sizes, since jump size is an unbounded second dimension |
 
 ---
 
@@ -197,7 +200,7 @@ This is the most important skill. Before thinking about recurrence, ask these qu
 > Maintain a `tails[]` array. For each element, binary search for its insertion position. `tails[i]` = smallest tail of all increasing subsequences of length `i+1`. Length of `tails` = LIS length. If n = 10⁵, O(n²) gets TLE — you must know this approach.
 
 **Hashmap as DP table:**
-> LC 1027 cannot use a 2D array because the second dimension (arithmetic difference) is an arbitrary integer. Use a hashmap per index instead: `dp[i]` is a map from `diff → length`. General rule: whenever your DP state has a variable unbounded second dimension, replace the array with a hashmap.
+> LC 1027 cannot use a 2D array because the second dimension (arithmetic difference) is an arbitrary integer. Use a hashmap per index instead: `dp[i]` is a map from `diff → length`. General rule: whenever your DP state has a variable unbounded second dimension, replace the array with a hashmap. Frog Jump (Pattern 1, LC 403) is the same rule applied to a different DP shape — worth noticing the two are the same underlying idea.
 
 **DP + Data Structure combo:**
 > LC 2407 requires LIS where the previous valid element must satisfy a range condition. Binary search alone is not enough — you need a segment tree with range max query to find the best previous state efficiently.
@@ -273,6 +276,12 @@ This is the most important skill. Before thinking about recurrence, ask these qu
 **Most common bug — iteration order:**
 > Always iterate by **interval length** in the outer loop, not by `i`. Fill all length-2 intervals before length-3. If you iterate by `i` directly, you reference sub-problems not yet computed — wrong answers with no obvious error.
 
+**Palindrome partitioning belongs here, not just in Recursion & Backtracking:**
+> LC 131 (Recursion & Backtracking sheet) enumerates *every* valid partition into palindromes. LC 132 asks a completely different question — the *minimum number of cuts* — and that shift from "enumerate all" to "optimize one number" is exactly what turns a backtracking problem into an Interval DP problem. `dp[i]` = minimum cuts for `s[0..i]`; for every `j <= i`, if `s[j..i]` is a palindrome, `dp[i] = min(dp[i], dp[j-1] + 1)`. Precomputing an `isPalindrome[i][j]` table first (itself filled in interval-length order, same iteration discipline as this pattern's main bug warning) turns the inner check into O(1) instead of re-verifying the palindrome every time — without it, the whole solution silently degrades from O(n²) to O(n³).
+
+**Minimax over split points, plus a binary-search optimization on top — LC 887:**
+> Super Egg Drop's recurrence is structurally an Interval DP split-point search — `dp[eggs][floors] = 1 + min over x in [1, floors] of max(dp[eggs-1][x-1], dp[eggs][floors-x])` — but with two things that make it feel unfamiliar at first: the dimensions are `(eggs, floors)` rather than a single range `[i, j]`, and the combination step is a **min of a max** (minimax), not a plain min or max. The naive O(eggs × floors²) from trying every split point directly is too slow at LeetCode's constraints; the fix is noticing that `dp[eggs-1][x-1]` increases and `dp[eggs][floors-x]` decreases as `x` grows, so the optimal `x` can be found with binary search on `x` instead of a linear scan — O(eggs × floors × log floors). The cleaner reformulation many people find easier to hold in their head: instead of "minimum trials to determine the critical floor," ask "with `t` trials and `e` eggs, what is the maximum number of floors I can distinguish?" — `dp[t][e] = dp[t-1][e-1] + dp[t-1][e] + 1`, and the answer is the smallest `t` for which this reaches `floors`. Both formulations are worth knowing; the reframing is the single biggest "aha" in this entire sheet's Phase 3.
+
 | # | Problem | Key Concept |
 |---|---|---|
 | 1 | GFG: Matrix Chain Multiplication | Pure Interval DP template |
@@ -281,8 +290,10 @@ This is the most important skill. Before thinking about recurrence, ask these qu
 | 4 | LC 1000. Minimum Cost to Merge Stones | Interval DP with grouping constraint |
 | 5 | LC 1547. Minimum Cost to Cut a Stick | Interval DP with sorted cut points |
 | 6 | LC 1278. Palindrome Partitioning III | Partition string into k palindromes — Interval DP + cost table |
-| 7 | LC 1043. Partition Array for Maximum Sum | Fixed window partition — simpler interval DP |
-| 8 | LC 471. Strange Printer | Print ranges optimally — non-obvious interval DP |
+| 7 | LC 132. Palindrome Partitioning II | Minimum cuts to partition into palindromes — precompute `isPalindrome[i][j]`, then 1D DP over cut positions |
+| 8 | LC 1043. Partition Array for Maximum Sum | Fixed window partition — simpler interval DP |
+| 9 | LC 471. Strange Printer | Print ranges optimally — non-obvious interval DP |
+| 10 | LC 887. Super Egg Drop | Minimax over split points + binary search on the DP transition, or the "max floors distinguishable" reframing — the hardest problem in this pattern |
 
 ---
 
@@ -343,7 +354,7 @@ This is the most important skill. Before thinking about recurrence, ask these qu
 | 2 | LC 2050. Parallel Courses III | Topological sort + DP for critical path length |
 | 3 | LC 1857. Largest Color Value in a Directed Graph | Topological sort + frequency DP per color |
 | 4 | LC 2328. Number of Increasing Paths in a Grid | Count paths — same implicit DAG as LC 329 |
-| 5 | LC 1топологических. Longest Path in a DAG | Pure DAG DP template — topo sort then relax edges |
+| 5 | LC 1976. Number of Ways to Arrive at Destination | Dijkstra-order DP — count shortest paths while relaxing distances |
 
 ---
 
@@ -444,6 +455,8 @@ This is the most important skill. Before thinking about recurrence, ask these qu
 > - **Knuth's Optimization:** Special case of D&C DP for interval DP when the cost satisfies the quadrangle inequality. O(n³) → O(n²).
 >
 > All three are competitive programming territory. For EU FAANG, an O(n²) correct solution will receive full credit in almost every interview where one of these theoretically applies. Do not invest practice time here.
+>
+> **Worth a one-line flag specifically because of Pattern 9's new addition:** Super Egg Drop's binary-search-on-the-transition trick is *not* one of these three named optimizations — it's a simpler, problem-specific monotonicity observation, not a general-purpose DP speedup technique. Don't conflate "I found a clever speedup for this one recurrence" with "I need to learn Knuth's Optimization" — the egg drop trick is worth knowing on its own; the three above are a different, much rarer tier.
 
 ---
 
@@ -464,7 +477,7 @@ This is the most important skill. Before thinking about recurrence, ask these qu
 
 | Phase | Pattern | Problems |
 |---|---|---|
-| Phase 1 — Foundation | 1D DP (+ Sliding Window DP) | 12 |
+| Phase 1 — Foundation | 1D DP (+ Sliding Window DP + Implicit-Graph DP) | 13 |
 | | Kadane's / Subarray DP | 5 |
 | | DP on Grid | 15 |
 | Phase 2 — Classical | 0/1 Knapsack (+ Grouped Knapsack) | 8 |
@@ -472,7 +485,7 @@ This is the most important skill. Before thinking about recurrence, ask these qu
 | | LIS (+ Hashmap DP + DS Combo) | 9 |
 | | LCS | 7 |
 | | String DP | 8 |
-| Phase 3 — Advanced | Interval DP | 8 |
+| Phase 3 — Advanced | Interval DP (+ Palindrome Cuts + Minimax/Egg Drop) | 10 |
 | | DP on Bitmask | 8 |
 | | DP on Tree | 8 |
 | | DP on DAG | 5 |
@@ -482,7 +495,7 @@ This is the most important skill. Before thinking about recurrence, ask these qu
 | | Game DP | 6 |
 | Phase 5 — Know About | DP Optimizations | reference only |
 | | DP Traps | 4 contrast problems |
-| **Total** | **16 active patterns** | **~123 problems** |
+| **Total** | **16 active patterns** | **~127 problems** |
 
 ---
 
@@ -492,4 +505,12 @@ This is the most important skill. Before thinking about recurrence, ask these qu
 
 **Two-pass each pattern.** First pass: solve each problem, use hints or editorial if stuck, understand the recurrence fully. Second pass one to two weeks later: solve cold, no hints.
 
+**Frog Jump (Pattern 1) is best done after LC 1027 (Pattern 6), not before.** Both rely on the identical "unbounded second dimension → hashmap instead of array" realization. Seeing the rule once in the more standard LIS context (Pattern 6) makes it much easier to recognize a second time inside a 1D DP problem that otherwise doesn't look like it belongs with Fibonacci and House Robber.
+
+**Palindrome Partitioning II (Pattern 9) should immediately follow Palindrome Partitioning III (LC 1278).** Both share the identical `isPalindrome[i][j]` precomputation step; the only difference is the outer objective (exactly k groups with a cost table vs. a plain minimum-cut count). Doing them back to back turns the precomputation into muscle memory instead of a one-off trick.
+
+**Super Egg Drop (Pattern 9) is the single hardest problem in this entire sheet and should be attempted last within Interval DP, not first.** Its minimax-over-split-points shape only makes sense once Burst Balloons and Minimum Cost to Merge Stones have made "try every split point, combine the two sides" fully automatic — the binary-search speedup and the "reframe as max floors distinguishable" trick are both add-on ideas layered on top of that base shape, not substitutes for understanding it.
+
 **After all 16 patterns:** Spend two to three weeks exclusively on LC Weekly Contest hard problems and problems you cannot immediately pattern-match. That final step — training on the unfamiliar — is what closes the remaining gap and eliminates interview surprise.
+
+---
