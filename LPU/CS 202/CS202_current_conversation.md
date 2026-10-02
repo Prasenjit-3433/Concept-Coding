@@ -189,3 +189,41 @@ Me to you:
     Now I'm giving the transcript of lecture Constructor & Destructor | OOPS in C++" along with instructor's
     provided note, your job would be to understand the content and then check if any parts of the syllabus is missing
     then combining both, start writing the final note in multiple parts in multiple responses.
+
+--------------------------
+Me to you:
+    Therefore, for CS 205, upto unit 3, our syllabus is done.
+    Unit 1 is taught by other instructors, I taught Unit 2 & Unit 3.
+
+    Here is the syllabus:
+    Unit I:
+    Concepts and Basics of C++ Programming : Introduction to concepts of OOP and OOP
+    Languages, Reading and writing data using cin and cout, Creating classes, Class objects, Accessing
+    class members, Differences between Structures, Unions, Enumerations and Classes, Inline and Noninline member functions, Static data members and static member functions, Differences between
+    procedural and object oriented programming paradigms, Features of Input/output Streams
+    Functions : Functions with Default parameters/arguments, Inline Functions, Manipulator Functions,
+    Function overloading and Scope rules, Friend of a class (friend function and friend class), Reference
+    variables, Differences between Call by value, Call by address and call by reference, Recursion
+    (Function, Member Function)
+
+    Unit II:
+    Pointers, Reference Variables, Arrays and String Concepts : Void pointer, Pointer arithmetic,
+    Pointer to pointer, Possible problems with the use of pointers - Dangling pointer, Wild pointer, Null
+    pointer assignment, Classes containing pointers, Pointer to objects, this pointer, Array of objects, The
+    Standard C++ string class-defining and assigning string objects, Member functions, Modifiers of string
+    class, Differences between pointer and reference variables, Array declaration and processing of
+    multidimensional arrays(inside main and inside class), Pointer to data member
+
+    Unit III:
+    Data File operations : Opening and closing of files, Modes of file, File stream functions,
+    Reading/Writing of files, Sequential access and random access file processing, Binary file operations,
+    Classes and file operations, Structures and file operation
+    Constructors, Destructors and File Handling : Manager functions (constructors and destructor),
+    Default constructor, Constructor with default arguments, Destructors, Parameterized constructor,
+    Copy constructor , Initializer lists
+
+    Now our job would be to create 2 MCQ question set for mid-term exam (Unit 1 + Unit 2 + Unit 3), where 
+    - each set will consist of 50 questions
+    - each question will have 4 options, out of them, only one will be true.
+
+    I'll be sharing a sample question set of another faculty.
