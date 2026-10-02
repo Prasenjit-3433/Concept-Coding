@@ -51,3 +51,33 @@ Me to you:
     I'll be following Striver's lecture to write note & explain. At the same, you'll be refering the above syllabus
     to check if any concept or subtopic missed in note.
     Got it?
+
+------------------------------------------------
+Me to you:
+    Therefore, for CS 205, upto unit 3, our syllabus is done.
+    Unit 1 is taught by other instructors, I taught Unit 2 & Unit 3.
+    
+    Here is the syllabus:
+    Unit I:
+    Introduction : Basic Concepts and Notations, Complexity analysis: time space and trade off, Omega
+    Notation, Theta Notation, Big O notation, Basic Data Structures.
+    Arrays : Linear arrays: memory representation, Array operations: traversal, insertion, deletion,
+    sorting, searching and merging and their complexity analysis.
+    Sorting and Searching : Bubble sort, Insertion sort, Selection sort, Searching: Linear Search and
+    Binary Search
+
+    Unit II:
+    Linked Lists : Introduction, Memory representation, Allocation, Traversal, Insertion, Deletion, Header
+    linked lists: Grounded and Circular, Two-way lists: operations on two way linked lists
+
+    Unit III:
+    Stacks : Introduction: List and Array representations, Operations on stack (traversal, push and pop),
+    Arithmetic expressions: polish notation, evaluation and transformation of expressions.
+    Queue : Array and list representation, operations (traversal, insertion and deletion), Priority Queues,
+    Deques.
+
+    Now our job would be to create 2 MCQ question set for mid-term exam (Unit 1 + Unit 2 + Unit 3), where 
+    - each set will consist of 50 questions
+    - each question will have 4 options, out of them, only one will be true.
+
+    I'll be sharing a sample question set of another faculty.
