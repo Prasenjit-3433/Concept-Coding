@@ -76,8 +76,18 @@ Me to you:
     Queue : Array and list representation, operations (traversal, insertion and deletion), Priority Queues,
     Deques.
 
-    Now our job would be to create 2 MCQ question set for mid-term exam (Unit 1 + Unit 2 + Unit 3), where 
-    - each set will consist of 50 questions
-    - each question will have 4 options, out of them, only one will be true.
+    But due to some special requirement, I've to write notes of Unit 1 as well. We're gonna breakdown the whole unit 1 like this:
+    - Lecture 1: Introduction : Basic Concepts and Notations, Complexity analysis: time space and trade off, Omega
+                 Notation, Theta Notation, Big O notation, Basic Data Structures.
 
-    I'll be sharing a sample question set of another faculty.
+    - Lecture 2: Arrays : Linear arrays: memory representation, Array operations: traversal, insertion, deletion,
+                 sorting, searching and merging and their complexity analysis.
+
+    - Lecture 3: Sorting (Bubble sort, Insertion sort, Selection sort)
+
+    - Lecture 4: Searching: Linear Search and Binary Search
+
+    - Lecture 5: Problem solving on Searching & Sorting.
+
+    Your job would be to write each lecture note, but do it in mutiple steps in multiple responses, so that the 
+    explanation stays comprehensive, like we did throughout the whole CS 205.
