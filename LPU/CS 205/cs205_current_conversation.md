@@ -91,3 +91,17 @@ Me to you:
 
     Your job would be to write each lecture note, but do it in mutiple steps in multiple responses, so that the 
     explanation stays comprehensive, like we did throughout the whole CS 205.
+
+----------------------------------------
+Me to you:
+    great job, you've done!....Unit 1 is now written!
+    Let's continue Unit 3. All the theory portion is done for Unit 3.
+    
+    Now I want leetcode or practice problem on each topic
+    - Problems on Stack
+    - Problems on Queue
+    - Problems on Heap
+    - Problems on Dequeue
+
+    for each topic, there would be only 5 problem, but each problem should teach one uniqeue concept & pattern.
+    First do the problem selections.
