@@ -227,3 +227,29 @@ Me to you:
     - each question will have 4 options, out of them, only one will be true.
 
     I'll be sharing a sample question set of another faculty.
+
+-----------------------
+Me to you:
+    Great progress!...upto Unit 3, everything is done.
+    Now we've to start writing for unit 4 and here it's syllabus:
+    
+    Unit IV:
+    1. Operator Overloading and Type Conversion : Operator Overloading (unary operator, binary
+    operator overloading), Type conversions - basic type to class type, class type to basic type.
+
+    2. Inheritance : Inheritance Basics – derived class and base class, Types (simple, multi-level, multiple
+    and hierarchical), Modes (private, protected, public inheritance), Overriding member functions, Order
+    of execution of constructors and destructors, Resolving ambiguities in inheritance, Virtual base class,
+    Aggregation and Composition.
+
+    Our plan for writing note would be like this -
+    - Lecture 1: Operator Overloading and Type Conversion. This will be written by you on your own.
+    - for `Inheritance`, I would provide transcript of video lecture from LearnYard
+    - whatever content is there in that LearnYard video lecture would be presented as lecture 2
+    - then we would look at the Unit IV syllabus to see if anything left out, 
+    - if anything left, would be written as lecture 3.
+
+    Therefore, whenever you're writing any note, you've to keep referencing the actual syllabus side by side, 
+    so that if you see anything is missing, you improvise that on your own as part of that note!
+
+    last but not least, you've to maintain the same quality of explaination as you've done through the note yet.
