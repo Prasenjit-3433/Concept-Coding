@@ -105,3 +105,30 @@ Me to you:
 
     for each topic, there would be only 5 problem, but each problem should teach one uniqeue concept & pattern.
     First do the problem selections.
+
+--------------------------------------------
+Me to you:
+    great job, you've done!....Unit 3 is now written!
+
+    Now start writing Unit 4, and here is the syllabus:
+    Recursion and Trees : Introduction to Recursion, Binary trees: introduction (complete and extended
+    binary trees), memory representation (linked, sequential), Binary Search Tree: introduction,
+    searching, insertion and deletion, In-order traversal, Pre-order traversal, Post-order traversal using
+    recursion, Recursive implementation of Towers of Hanoi, Merge sort, Quick sort
+
+    I've already written 'Recursion level 1' on my own, go throught it in detail.
+    Now from 'Recursion level 2', we'll be start writing.
+    As usual, I will giving transcript & you'll be writing the note
+    
+    - Recursion on Subsequences
+    - All Kind of Patterns in Recursion | Print All | Print one | Count
+    - Combination Sum
+    - Combination Sum II
+    - Subset Sum I
+    - Subset Sum II
+    - Print all Permutations of a String/Array (2 Approaches)
+    - M-Coloring Problem
+    - Palindrome Partitioning
+
+    These are all the list of concepts & pattern we'll be doing in 'Recursion level 2'.
+    Whenever yoi're ready!
