@@ -132,3 +132,11 @@ Me to you:
 
     These are all the list of concepts & pattern we'll be doing in 'Recursion level 2'.
     Whenever yoi're ready!
+
+------------------------------
+Me to you:
+    okay, by the time now, we've finished recursion & sorting. We're ready to start tree!
+    
+    Now look at the university provided syllabus, and solely based on that we'll be creating content.
+    So our first job would be to create a content overview of Tree, i.e. content distribution. Then we'll be 
+    start writing each note one by one.
