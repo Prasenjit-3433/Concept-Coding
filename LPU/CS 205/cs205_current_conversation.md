@@ -167,3 +167,17 @@ You to me:
     Once you confirm, I'll start writing Lecture 1.
 
 -------------------
+Me to you:
+    
+    Great job, you've done. You've written the entire Unit IV in great quality.
+    Now it's time to start working on the next unit i.e. Unit V
+    
+    Here is the syllabus of Unit V:
+    Heaps and Hashing : Heaps: Introduction, Insertion, Deletion, HeapSort, Hashing introduction: hash
+    functions, hash table, Open hashing (separate chaining), Closed hashing (open addressing): linear
+    probing, quadratic probing and double hashing.
+
+    Now look at the above university provided syllabus, and solely based on that we'll be creating content.
+    So our first job would be to create a content overview, i.e. content distribution. Then we'll be 
+    start writing each note one by one.
+    
