@@ -181,3 +181,25 @@ Me to you:
     So our first job would be to create a content overview, i.e. content distribution. Then we'll be 
     start writing each note one by one.
     
+------------------------
+You to me:
+    
+    Here's the Unit V distribution, based only on the university syllabus. Seven lectures; the two big topics (heap operations and probing) are split so each note stays detailed.
+
+    | # | Lecture | Syllabus item | Content |
+    | --- | --- | --- | --- |
+    | 1 | Heaps: Introduction & Array Representation | Heaps: Introduction | Max-heap and min-heap, the heap property, why a heap must be a **complete** binary tree (Unit IV L1/L2), and `2i+1`, `2i+2`, `(i-1)/2` index math. Heap vs BST, and how this opens up the `priority_queue` black box from Unit III L5. |
+    | 2 | Heap Insertion & Deletion | Insertion, Deletion | **Insert**: place at index `n`, then sift-up. **Delete (extract root)**: move the last element to the root, then sift-down. Full array and tree traces, with `heapifyUp` and `heapifyDown` code. O(log n) proof from the tree height. |
+    | 3 | Build Heap & HeapSort | HeapSort | Bottom-up build in O(n) versus n inserts at O(n log n) (and why the first is O(n)). In-place HeapSort: build a max-heap, then swap the root with the last element and shrink. O(n log n) in all cases, O(1) space, not stable. Comparison with Merge Sort and Quick Sort from Unit IV. |
+    | 4 | Hashing: Introduction, Hash Functions & Hash Table | Hashing introduction: hash functions, hash table | The O(1) lookup goal. Direct-address table and its limits. Hash functions: division, multiplication, mid-square, folding, plus string hashing. Table size choice (prime). Collisions, the pigeonhole principle, and load factor λ. |
+    | 5 | Open Hashing: Separate Chaining | Open hashing | Each slot is a linked-list head (Unit II `Node*`). Insert, search and delete using the same `Node*` signatures. Expected O(1 + λ), worst case O(n). Trade-offs: extra pointers, non-contiguous memory. |
+    | 6 | Closed Hashing I: Linear & Quadratic Probing | Closed hashing: linear probing, quadratic probing | Open addressing basics: `(h(k) + i) % m` for linear and `(h(k) + c1·i + c2·i²) % m` for quadratic. Insert, search, and delete with **tombstones**. Primary vs secondary clustering. When quadratic probing guarantees a free slot (λ < 0.5 with a prime table size). |
+    | 7 | Closed Hashing II: Double Hashing + Wrap-up | Double hashing | `(h1(k) + i·h2(k)) % m`, why `h2(k)` must be non-zero and coprime to `m`, and how it removes clustering. Rehashing when λ grows. Full comparison table of chaining, linear, quadratic and double hashing. Unit V summary, and where STL `unordered_map` fits. |
+
+    **Scope decisions**
+      - **Lecture 3** gets two Parts, since the O(n) build-heap proof and in-place HeapSort both need diagrams.
+      - **Lectures 6 and 7** share one probing skeleton: the notes change only the probe formula, the same way Unit III's conversions change only scan direction.
+      - **STL** (`priority_queue`, `unordered_map`) appears only as a closing connection, not as the main content.
+      - **Conventions** stay as before: no instructor name, no practice questions, and `Node*`-style signatures with updated pointers returned.
+    
+    Shall I start Lecture 1, or would you like to change the split first?
