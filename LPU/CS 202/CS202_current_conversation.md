@@ -253,3 +253,25 @@ Me to you:
     so that if you see anything is missing, you improvise that on your own as part of that note!
 
     last but not least, you've to maintain the same quality of explaination as you've done through the note yet.
+
+
+-------------------------------------------
+Me to you:
+    great job, you've done. Entire unit 4 is written.
+    Now we're gonna start writing unit 5:
+    
+    Unit V:
+        Dynamic Memory Management and Polymorphism : Dynamic memory allocation using new and 
+        delete operators, Virtual destructors, Compile and run time polymorphism, Virtual functions, Dynamic
+        constructors, Abstract classes and concrete class, Introduction to Self-Referential class, Pure virtual
+        functions, Early binding and late binding, Memory leak and allocation failures
+
+    Since we're following LearnYard lectures for C++.
+    Previously, I watched the inhertance lecture and provided you the transcript of that youtube of learnyard, you've
+    written that as form of note as Lecture 1.
+    Now I'm gonna provide you transcript of that polymorphism video of learnyard. your job would be write note as Lecture 2.
+    
+    Finally, those 2 lecture your job would be to look at Unit V syllabus and check any concept is missing, and starting
+    as Lecture 3, 4,...so on.
+
+    
