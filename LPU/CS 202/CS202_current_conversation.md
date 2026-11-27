@@ -274,4 +274,26 @@ Me to you:
     Finally, those 2 lecture your job would be to look at Unit V syllabus and check any concept is missing, and starting
     as Lecture 3, 4,...so on.
 
+---------------------------------------------
+Me to you:
     
+    great job, you've done. Entire unit 5 is written.
+    Now we're gonna start writing unit 6:
+    
+    Unit VI:
+        Exception Handling, Templates and Standard Template Library (STL) : Basics of exception
+        handling, Exception handling mechanism, Throwing mechanism, Catching mechanism, Rethrowing an
+        exception, Function template and class template, Class template with inheritance, Introduction to
+        STL- Containers, Algorithms and iterators, Container - Vector and List
+
+    Since we're following LearnYard lectures for C++, I'm gonna provide you transcript of the Exception Handling video of 
+    learnyard. your job would be to look at the syllabus and the content learnyard taught, then combine them together and
+    write entire Exception Handling note as Lecture 1 
+
+    Similarly I'm gonna provide you Templates in C++ & STL in C++ one by one.
+    your job would be to look at the syllabus and the content learnyard taught, then combine them together and
+    write entire Templates in C++ note as Lecture 2 &  STL in C++ as lecture 3.
+
+    No separate gap fill note!
+
+    So whenever you're ready!
